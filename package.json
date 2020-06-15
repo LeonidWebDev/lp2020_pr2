@@ -1,0 +1,22 @@
+{
+    "name": "lp2020_pr2",
+    "version": "1.0.0",
+    "description": "LP",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Leo",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-sass": "^4.1.0"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1"
+    }
+}
