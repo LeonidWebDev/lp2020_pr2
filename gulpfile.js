@@ -13,7 +13,7 @@ function html() {
 }
 
 function css() {
-    return src('dist/scss/*.scss')
+    return src('dist/css/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(dest('app/css/'));
@@ -33,7 +33,7 @@ function serve() {
     })
 
     watch('dist/index.html', series(clearHtml, html)).on('change', sync.reload)
-    watch('dist/scss/style.scss', series(clearCss, css)).on('change', sync.reload)
+    watch('dist/css/style.scss', series(clearCss, css)).on('change', sync.reload)
 
 }
 
