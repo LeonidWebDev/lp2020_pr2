@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="css/style.css">
     <title>LP</title>
 </head>
@@ -24,7 +25,7 @@
             </div>
         </div>
     </header>
-    <section class="slider">
+    <!-- <section class="slider">
         <div class="container">
             <div class="cubebox">
                 <div class="cube">
@@ -37,17 +38,44 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- <div class="cubebox">
-        <div class="cube">
-            <div class="cube-side cube-front">box</div>
-            <div class="cube-side cube-back">box</div>
-            <div class="cube-side cube-right">box</div>
-            <div class="cube-side cube-left">box</div>
-            <div class="cube-side cube-top">box</div>
-            <div class="cube-side cube-bottom">box</div>
+    </section> -->
+    <section class="gallery">
+        <div class="container">
+            <div class="slider gallery__slider">
+                <div class="slider__item">
+                    <img class="slider__item-img" src="./images/TBcsback.png" alt="#">
+                </div>
+                <div class="slider__item">
+                    <img class="slider__item-img" src="./images/tbrmback.png" alt="#">
+                </div>
+                <div class="slider__item">
+                    <img class="slider__item-img" src="./images/tbtwback.png" alt="#">
+                </div>
+            </div>
         </div>
-    </div> -->
+    </section>
+    <section class="tabs">
+        <div class="container">
+            <div class="tabs__inner">
+                <div class="tabs__head _tabs1 active">
+                    <img class="tabs__head-img" src="./images/tab1.jpg" alt="#">драконы
+                </div>
+                <div class="tabs__head _tabs2 ">
+                    <img class="tabs__head-img" src="./images/tab2.jpg" alt="#">рыцари
+                </div>
+                <div class="tabs__head _tabs3">
+                    <img class="tabs__head-img" src="./images/tab3.jpg" alt="#">джинны
+                </div>
+                <div class="tabs__body _tabs1  active">Летает. Наносит дополнительные 50% урона Эфритам и Султанам Эфритам. Может кастовать дружественное заклинание трижды за бой (для каждого стека) вместо своего хода.</div>
+                <div class="tabs__body _tabs2">Летает. Иммуннитет к заклинаниям 1-4 уровня. Двуклеточная атака.</div>
+                <div class="tabs__body _tabs3">Кавалерийский бонус - увеличение силы атаки на 5% за каждую клетку, пройденную на поле боя перед атакой.</div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/jQuery.3.5.1.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
 
 </html>
