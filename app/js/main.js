@@ -13,16 +13,18 @@ $(function() {
         let classes = $(this).attr("class")
         let indx = classes.indexOf('_tabs')
         let detection = classes.substr(indx, 6) // detect the _class of tab
-        $('.tabs__head ').removeClass('active')
+        $('.tabs__head').removeClass('active')
         $(this).addClass('active')
 
         // addClass to tabs__body
         $(`.tabs__body`).removeClass('active')
         $(`.tabs__body.${detection}`).addClass('active')
         console.log()
-
-
-
+    });
+    // accordeon
+    $('.accordeon__item').on('click', function(e) {
+        let curElem = $(this).children(".accordeon__item-body")
+        curElem.toggleClass("accordeon__item-body--hidden")
     });
 
 

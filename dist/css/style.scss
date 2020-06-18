@@ -132,10 +132,12 @@ body {
         position: absolute;
         content: "";
         left: 0px;
+        top: 0px;
         background: url('../images/Genie.jpg');
         background-size: auto;
         background-repeat: no-repeat;
-        height: 300px;
+        background-position: center 0;
+        height: 100%;
         width: 50%;
         z-index: 3;
     }
@@ -143,10 +145,12 @@ body {
         position: absolute;
         content: "";
         left: 0px;
+        top: 0px;
         background: url('../images/Rycr.jpg');
         background-size: auto;
         background-repeat: no-repeat;
-        height: 300px;
+        background-position: center 0;
+        height: 100%;
         width: 50%;
         z-index: 3;
     }
@@ -154,10 +158,12 @@ body {
         position: absolute;
         content: "";
         left: 0px;
+        top: 0px;
         background: url('../images/Drag.jpg');
         background-size: auto;
         background-repeat: no-repeat;
-        height: 300px;
+        background-position: center 0;
+        height: 100%;
         width: 50%;
         z-index: 3;
         // animation: animate 14s steps(11) infinite;
@@ -177,6 +183,25 @@ body {
     }
     &__head.active {
         border: 1px solid red;
+    }
+}
+
+.accordeon {
+    &__inner {
+        padding-top: 40px;
+    }
+    &__item {
+        padding: 10px;
+        border: 1px solid blue;
+        z-index: 5;
+    }
+    &__item-title {}
+    &__item-img {}
+    &__item-body {
+        padding: 10px;
+    }
+    &__item-body--hidden {
+        display: none;
     }
 }
 
