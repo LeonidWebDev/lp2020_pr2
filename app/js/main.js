@@ -21,6 +21,7 @@ $(function() {
         $(`.tabs__body.${detection}`).addClass('active')
         console.log()
     });
+
     // accordeon
     $('.accordeon__item').on('click', function(e) {
         let curElem = $(this).children(".accordeon__item-body")
