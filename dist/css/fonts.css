@@ -3,7 +3,7 @@
     src: url('../fonts/FiraSans-Regular.ttf');
     src: url('../fonts/FiraSans-Regular.ttf') format('truetype');
     font-weight: 400;
-    font-style: Regular;
+    font-style: normal;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     src: url('../fonts/FiraSans-Bold.ttf');
     src: url('../fonts/FiraSans-Bold.ttf') format('truetype');
     font-weight: 700;
-    font-style: bold;
+    font-style: normal;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     src: url('../fonts/FiraSans-Light.ttf');
     src: url('../fonts/FiraSans-Light.ttf') format('truetype');
     font-weight: 300;
-    font-style: Light;
+    font-style: normal;
 }
 
 @font-face {
@@ -48,10 +48,12 @@
 
 .icon-phone:before {
     content: "\e942";
+    margin-right: 10px;
 }
 
 .icon-envelop:before {
     content: "\e945";
+    margin-right: 10px;
 }
 
 .icon-google-plus:before {

@@ -17,6 +17,10 @@ li {
     list-style: none;
 }
 
+button:active {
+    outline: none;
+}
+
 a:hover {
     cursor: pointer;
     text-decoration: none;
@@ -30,6 +34,10 @@ a:hover {
 
 body {
     font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fedb80;
+    background: linear-gradient(180deg, rgba(148, 166, 168, 1) 50%, rgba(74, 14, 68, 1) 100%);
 }
 
 // header
@@ -39,7 +47,9 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: 20px 0px;
-        background-color: #ccc;
+        background-image: url(../images/texture_1.png);
+        background-repeat: repeat;
+        border-bottom: 1px solid #fedb80;
     }
     &__logo {
         margin-left: 40px;
@@ -51,6 +61,10 @@ body {
     &__menu-item {
         display: inline-block;
     }
+    &__menu-item:hover {
+        border-bottom: 1px solid #fedb80;
+        cursor: pointer;
+    }
     &__menu-item+&__menu-item {
         margin-left: 20px;
     }
@@ -58,7 +72,12 @@ body {
 
 //slider 
 .gallery {
-    &__slider {}
+    &__slider {
+        background-image: url(../images/texture_2.png);
+        background-repeat: repeat;
+        position: relative;
+        padding-bottom: 40px;
+    }
 }
 
 .slick-list {
@@ -71,8 +90,9 @@ body {
 }
 
 .slider {
-    position: relative;
-    &__item {}
+    &__item {
+        outline: none;
+    }
     &__item-img {
         min-height: 400px;
     }
@@ -83,91 +103,97 @@ body {
         top: 50%;
         z-index: 5;
         font-size: 0;
+        border: none;
+        outline: none;
+        border: 1px solid #fedb80;
     }
     .slick-arrow.slick-prev {
-        left: 0;
+        left: 10px;
         background: url('../images/arrrowSw.png') 0 50% no-repeat;
         transform: rotate(180deg);
     }
     .slick-arrow.slick-next {
-        right: 0;
+        right: 10px;
         background: url('../images/arrrowSw.png') 0 50% no-repeat;
     }
     .slick-dots {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 10px;
     }
     .slick-dots li {
         margin: 0 5px;
     }
     .slick-dots li.slick-active button {
-        background-color: red;
+        background-color: #fedb80;
+        outline: none;
     }
     .slick-dots button {
         font-size: 0;
         width: 15px;
         height: 15px;
         border-radius: 50%;
+        border: 1px solid #fedb80;
+    }
+    .slick-dots button:hover {
+        cursor: pointer;
     }
 }
 
 .tabs {
-    &__inner {
-        padding-top: 50px;
-    }
+    &__inner {}
     &__head {
         display: inline-block;
         width: 33.33%;
         text-align: center;
+        border: 1px solid transparent;
+        background-image: url(../images/texture_1.png);
+        background-repeat: repeat;
+        padding-bottom: 10px;
+    }
+    &__head:hover {
+        border: 1px solid #fedb80;
+        cursor: pointer;
+    }
+    &__head-img {
+        display: block;
+        margin: 10px auto;
     }
     &__body {
         display: none;
         padding-left: 50%;
-        padding-top: 100px;
-        padding-bottom: 100px;
+        min-height: 400px;
         position: relative;
+        border: 1px solid transparent;
+        background-color: #fff;
+        color: #000;
+        padding-top: 170px;
     }
+    &__body._tabs3::before {
+        background: url('../images/Genie.jpg');
+    }
+    &__body._tabs2::before {
+        background: url('../images/Rycr.jpg');
+    }
+    &__body._tabs1::before {
+        background: url('../images/Drag.jpg');
+    }
+    &__body._tabs1::before,
+    &__body._tabs2::before,
     &__body._tabs3::before {
         position: absolute;
         content: "";
         left: 0px;
         top: 0px;
-        background: url('../images/Genie.jpg');
         background-size: auto;
         background-repeat: no-repeat;
-        background-position: center 0;
+        background-position: center center;
         height: 100%;
         width: 50%;
         z-index: 3;
     }
-    &__body._tabs2::before {
-        position: absolute;
-        content: "";
-        left: 0px;
-        top: 0px;
-        background: url('../images/Rycr.jpg');
-        background-size: auto;
-        background-repeat: no-repeat;
-        background-position: center 0;
-        height: 100%;
-        width: 50%;
-        z-index: 3;
-    }
-    &__body._tabs1::before {
-        position: absolute;
-        content: "";
-        left: 0px;
-        top: 0px;
-        background: url('../images/Drag.jpg');
-        background-size: auto;
-        background-repeat: no-repeat;
-        background-position: center 0;
-        height: 100%;
-        width: 50%;
-        z-index: 3;
-        // animation: animate 14s steps(11) infinite;
-    }
+    // animation: animate 14s steps(11) infinite;
     // @keyframes animate {
     //     from {
     //         background-position: 0;
@@ -179,26 +205,33 @@ body {
     &__body.active {
         display: block;
         text-align: center;
-        border: 1px solid red;
+        border: 1px solid #fedb80;
+        ;
     }
     &__head.active {
-        border: 1px solid red;
+        border: 1px solid #fedb80;
+        ;
     }
 }
 
 .accordeon {
-    &__inner {
-        padding-top: 40px;
-    }
+    &__inner {}
     &__item {
-        padding: 10px;
-        border: 1px solid blue;
-        z-index: 5;
+        border-bottom: 1px solid #fedb80;
     }
-    &__item-title {}
-    &__item-img {}
+    &__item-title {
+        background-image: url(../images/texture_1.png);
+        background-repeat: repeat;
+        padding: 10px;
+    }
+    &__item-img {
+        display: block;
+        margin-bottom: 10px;
+    }
     &__item-body {
         padding: 10px;
+        background-color: #fff;
+        color: #000;
     }
     &__item-body--hidden {
         display: none;
@@ -228,6 +261,7 @@ body {
     position: absolute;
     width: inherit;
     height: inherit;
+    border: 1px solid #fedb80;
 }
 
 .cube__img {
@@ -273,17 +307,28 @@ body {
     &__inner {
         display: flex;
         justify-content: space-between;
-        background-color: rgb(112, 108, 156)
+        align-items: center;
+        background-image: url(../images/texture_1.png);
+        background-repeat: repeat;
+        min-height: 300px;
     }
     &__contacts {
         width: 50%;
         text-align: center;
     }
-    &__mail {}
+    &__phone {
+        margin: 10px 0px;
+    }
+    &__mail {
+        margin: 10px 0px;
+        margin-left: 26px;
+    }
     &__social {
         width: 50%;
         text-align: center;
     }
     &__social-list {}
-    &__social-item {}
+    &__social-item {
+        margin: 10px 0px;
+    }
 }
