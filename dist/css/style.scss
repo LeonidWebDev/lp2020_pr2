@@ -57,11 +57,16 @@ body {
     &__logo-img {}
     &__menu-list {
         margin-right: 40px;
+        animation: comeleft 2s ease-in-out 1;
     }
     &__menu-item {
         display: inline-block;
     }
-    &__menu-item:hover {
+    &__menu-link {
+        text-decoration: none;
+        color: #fedb80;
+    }
+    &__menu-link:hover {
         border-bottom: 1px solid #fedb80;
         cursor: pointer;
     }
@@ -106,6 +111,9 @@ body {
         border: none;
         outline: none;
         border: 1px solid #fedb80;
+    }
+    .slick-arrow:hover {
+        cursor: pointer;
     }
     .slick-arrow.slick-prev {
         left: 10px;
@@ -169,6 +177,8 @@ body {
         background-color: #fff;
         color: #000;
         padding-top: 170px;
+        padding-right: 20px;
+        padding-bottom: 20px;
     }
     &__body._tabs3::before {
         background: url('../images/Genie.jpg');
@@ -193,15 +203,6 @@ body {
         width: 50%;
         z-index: 3;
     }
-    // animation: animate 14s steps(11) infinite;
-    // @keyframes animate {
-    //     from {
-    //         background-position: 0;
-    //     }
-    //     to {
-    //         background-position: -2626px;
-    //     }
-    // }
     &__body.active {
         display: block;
         text-align: center;
@@ -223,6 +224,9 @@ body {
         background-image: url(../images/texture_1.png);
         background-repeat: repeat;
         padding: 10px;
+    }
+    &__item-title:hover {
+        cursor: pointer;
     }
     &__item-img {
         display: block;
@@ -254,7 +258,7 @@ body {
     width: inherit;
     height: inherit;
     transform-style: preserve-3d;
-    // animation: cubeRotation 30s ease-in-out infinite;
+    animation: cubeRotation 30s ease-in-out infinite;
 }
 
 .cube-side {
@@ -299,7 +303,22 @@ body {
         transform: rotate3d(0, 0, 0, 0deg);
     }
     50% {
-        transform: rotate3d(3, 1, 2, 360deg);
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+    51% {
+        transform: rotate3d(1, 0, 0, 360deg);
+    }
+}
+
+@keyframes comeleft {
+    0% {
+        transform: translateX(500px);
+    }
+    90% {
+        transform: skewX(20deg);
+    }
+    100% {
+        transform: translateX(0px);
     }
 }
 
@@ -319,9 +338,33 @@ body {
     &__phone {
         margin: 10px 0px;
     }
+    &__phone-link {
+        text-decoration: none;
+        color: #fedb80;
+        margin-right: 46px;
+    }
+    &__phone-link:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #fedb80;
+    }
     &__mail {
         margin: 10px 0px;
-        margin-left: 26px;
+    }
+    &__mail-link {
+        text-decoration: none;
+        color: #fedb80;
+        position: relative;
+    }
+    &__mail-link:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #fedb80;
+    }
+    &__mail-link:hover::after {
+        position: absolute;
+        content: "работодателям";
+        left: 50%;
+        bottom: -30px;
+        transform: translateX(-50%);
     }
     &__social {
         width: 50%;
@@ -331,4 +374,17 @@ body {
     &__social-item {
         margin: 10px 0px;
     }
+    &__social-item {
+        margin: 10px 0px;
+    }
+    &__social-link {
+        color: #fedb80;
+        text-decoration: none;
+    }
+    &__social-link:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #fedb80;
+    }
 }
+
+@import 'media';
