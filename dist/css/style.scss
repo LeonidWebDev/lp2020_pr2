@@ -117,12 +117,12 @@ body {
     }
     .slick-arrow.slick-prev {
         left: 10px;
-        background: url('../images/arrrowSw.png') 0 50% no-repeat;
+        background: url('../images/slider/arrrowSw.png') 0 50% no-repeat;
         transform: rotate(180deg);
     }
     .slick-arrow.slick-next {
         right: 10px;
-        background: url('../images/arrrowSw.png') 0 50% no-repeat;
+        background: url('../images/slider/arrrowSw.png') 0 50% no-repeat;
     }
     .slick-dots {
         display: flex;
@@ -150,7 +150,6 @@ body {
 }
 
 .tabs {
-    &__inner {}
     &__head {
         display: inline-block;
         width: 33.33%;
@@ -181,13 +180,13 @@ body {
         padding-bottom: 20px;
     }
     &__body._tabs3::before {
-        background: url('../images/Genie.jpg');
+        background: url('../images/tabs/Genie.jpg');
     }
     &__body._tabs2::before {
-        background: url('../images/Rycr.jpg');
+        background: url('../images/tabs/Rycr.jpg');
     }
     &__body._tabs1::before {
-        background: url('../images/Drag.jpg');
+        background: url('../images/tabs/Drag.jpg');
     }
     &__body._tabs1::before,
     &__body._tabs2::before,
@@ -216,7 +215,6 @@ body {
 }
 
 .accordeon {
-    &__inner {}
     &__item {
         border-bottom: 1px solid #fedb80;
     }
@@ -370,7 +368,6 @@ body {
         width: 50%;
         text-align: center;
     }
-    &__social-list {}
     &__social-item {
         margin: 10px 0px;
     }

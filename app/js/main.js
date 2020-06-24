@@ -1,4 +1,5 @@
 $(function() {
+    //slick slider
     $('.slider').slick({
         dots: true,
         infinite: true,
@@ -12,14 +13,15 @@ $(function() {
     $('.tabs__head').on('click', function(e) {
         let classes = $(this).attr("class")
         let indx = classes.indexOf('_tabs')
-        let detection = classes.substr(indx, 6) // detect the _class of tab
+        let eClass = classes.substr(indx, 6) // detect the unicue _class of tab (but better with data-attr)
+
         $('.tabs__head').removeClass('active')
         $(this).addClass('active')
 
         // addClass to tabs__body
         $(`.tabs__body`).removeClass('active')
-        $(`.tabs__body.${detection}`).addClass('active')
-        console.log()
+        $(`.tabs__body.${eClass}`).addClass('active')
+
     });
 
     // accordeon
