@@ -37,7 +37,8 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: #fedb80;
-    background: linear-gradient(180deg, rgba(148, 166, 168, 1) 50%, rgba(74, 14, 68, 1) 100%);
+    background-color: #cccccc;
+    word-break: break-all;
 }
 
 // header
@@ -206,11 +207,9 @@ body {
         display: block;
         text-align: center;
         border: 1px solid #fedb80;
-        ;
     }
     &__head.active {
         border: 1px solid #fedb80;
-        ;
     }
 }
 
@@ -382,6 +381,91 @@ body {
         cursor: pointer;
         border-bottom: 1px solid #fedb80;
     }
+}
+
+//minigame ROCK SCISSORS PAPER
+.rsp {
+    text-align: center;
+}
+
+.rsp-inner {
+    background-color: chocolate;
+    min-height: 600px;
+}
+
+.rsp-welcome {
+    display: none;
+    &__text {
+        max-width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    &__button {
+        display: inline-block;
+        border: 1px solid green;
+        background-color: green;
+    }
+    &__button:hover {
+        cursor: pointer;
+    }
+}
+
+.rsp-welcome.active {
+    display: block;
+    padding-top: 300px;
+}
+
+.rsp-select {
+    display: none;
+    padding-top: 200px;
+    &-icons {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+    &-icon {
+        flex: 0 1 100px;
+        border: 1px solid transparent;
+        padding-top: 30px;
+    }
+    &-icon:hover {
+        cursor: pointer;
+        border: 1px solid gold;
+    }
+    &__img {}
+    &__text {
+        max-width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    &__button {
+        display: inline-block;
+        background-color: magenta;
+    }
+}
+
+.rsp-select.active {
+    display: block;
+}
+
+.rsp-game {
+    display: none;
+    display: flex;
+    &-enemy {}
+    &-battle {}
+    &-own {}
+}
+
+.rsp-game.active {
+    display: block;
+}
+
+.rsp-end {
+    display: none;
+}
+
+.rsp-end.active {
+    display: block;
 }
 
 @import 'media';

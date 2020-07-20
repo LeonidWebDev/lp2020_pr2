@@ -30,5 +30,16 @@ $(function() {
         curElem.toggleClass("accordeon__item-body--hidden")
     });
 
+    //game
+    $('.rsp-welcome__button').on('click', function(e) {
+        $('.rsp-welcome').toggleClass("active")
+        $('.rsp-select').toggleClass("active")
+    });
+    $('.rsp-select__button').on('click', function(e) {
+        $('.rsp-select').toggleClass("active")
+        $('.rsp-game').toggleClass("active")
+    });
+
+
 
 })
