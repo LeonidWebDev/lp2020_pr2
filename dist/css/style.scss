@@ -434,13 +434,15 @@ body {
     }
     &__img {}
     &__text {
-        max-width: 50%;
+        display: block;
         margin: 0 auto;
         padding: 20px;
     }
     &__button {
         display: inline-block;
         background-color: magenta;
+        padding: 20px;
+        border: 1px solid gold;
     }
 }
 
@@ -450,14 +452,27 @@ body {
 
 .rsp-game {
     display: none;
-    display: flex;
-    &-enemy {}
-    &-battle {}
-    &-own {}
+    background-color: purple;
+    min-height: inherit;
+    &-enemy {
+        width: 25%;
+    }
+    &-battle {
+        width: 50%;
+        min-height: inherit;
+        background-color: #ccc;
+        border: 1px solid gold;
+    }
+    &-own {
+        width: 25%;
+    }
 }
 
 .rsp-game.active {
-    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
 }
 
 .rsp-end {
