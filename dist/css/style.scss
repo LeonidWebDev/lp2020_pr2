@@ -463,8 +463,22 @@ body {
         background-color: #ccc;
         border: 1px solid gold;
     }
+    &-start {
+        display: inline-block;
+        background-color: magenta;
+        padding: 20px;
+        border: 1px solid gold;
+    }
     &-own {
         width: 25%;
+    }
+    &-playerPoints {
+        font-size: 32px;
+        background-color: blue;
+    }
+    &-enemyPoints {
+        font-size: 32px;
+        background-color: blue;
     }
 }
 
@@ -477,6 +491,18 @@ body {
 
 .rsp-end {
     display: none;
+    .rsp-end-exit {
+        display: inline-block;
+        background-color: magenta;
+        padding: 20px;
+        border: 1px solid gold;
+    }
+    .rsp-end-again {
+        display: inline-block;
+        background-color: magenta;
+        padding: 20px;
+        border: 1px solid gold;
+    }
 }
 
 .rsp-end.active {
