@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="css/style.css">
-    <title>landingPage</title>
+    <title>LandingPage</title>
 </head>
 
 <body>
@@ -66,21 +66,29 @@
             <div class="rsp-inner">
                 <div class="rsp-welcome active">
                     <div class="rsp-welcome__text">
-                        добро пожаловать в игру
+                        хотите поиграть?
+                    </div>
+                    <div class="rsp-welcome-anim">
+                        <img class="rsp-welcome__img1" src="./images/accord/hr1.jpg" alt="#">
+                        <img class="rsp-welcome__img2" src="./images/accord/hr2.jpg" alt="#">
+                        <img class="rsp-welcome__img3" src="./images/accord/hr3.jpg" alt="#">
                     </div>
                     <div class="rsp-welcome__button">
                         начать игру
                     </div>
                 </div>
                 <div class="rsp-select">
+                    <div class="rsp-select-title">
+                        выберите противника
+                    </div>
                     <div class="rsp-select-icons">
-                        <div class="rsp-select-icon">
+                        <div class="rsp-select-icon active">
                             <img class="rsp-select__img" src="./images/accord/hr1.jpg" alt="#">
                             <p>Солмир</p>
                         </div>
                         <div class="rsp-select-icon">
                             <img class="rsp-select__img" src="./images/accord/hr2.jpg" alt="#">
-                            <p> Сэр Мюллих</p>
+                            <p>Сэр Мюллих</p>
                         </div>
                         <div class="rsp-select-icon">
                             <img class="rsp-select__img" src="./images/accord/hr3.jpg" alt="#">
@@ -88,10 +96,11 @@
                         </div>
                     </div>
                     <div class="rsp-select__text">
-                        <p>select opponent</p>
-                        <div class="rsp-select-choice">hero</div>
+                        <div class="rsp-select-choice">Солмир</div>
+                        <p class="rsp-select-descr active" data-enemy="Солмир">Самый опасный оппонент, умеет читать мысли, поэтому играть с ним бесполезно, он всегда выигрывает</p>
+                        <p class="rsp-select-descr" data-enemy="Сэр Мюллих">Честный и благородный противник, бои с ним всегда интересны и непредсказуемы</p>
+                        <p class="rsp-select-descr" data-enemy="Эллезар">Эллезар весьма последовательный и от этого предсказуемый соперник, подойдет только для новичков</p>
                     </div>
-
                     <div class="rsp-select__button">
                         начать игру
                     </div>
@@ -100,7 +109,6 @@
                     <div class="rsp-game-enemy">
                         computer
                         <div class="rsp-game-enemyPoints">0</div>
-
                     </div>
                     <div class="rsp-game-battle">
                         <!-- clone block with css -->

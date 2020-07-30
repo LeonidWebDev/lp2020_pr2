@@ -52,7 +52,7 @@ $(function() {
     //select screen
     let enemy = ""
     let enemyImgSc = ""
-    let blok
+    let blok = ""
     $('.rsp-select').on('click', function(e) {
 
         // find name of enemy
@@ -60,12 +60,29 @@ $(function() {
             enemy = $(e.target).find("p").html()
             blok = $(e.target).html()
 
+            //select description
+            $(".rsp-select__text").find(`.rsp-select-descr.active`).removeClass("active")
+            $(".rsp-select__text").find(`.rsp-select-descr[data-enemy="${enemy}"]`).addClass("active")
+
+            //select opponent icon
+            $(".rsp-select-icons").find(".rsp-select-icon.active").removeClass("active")
+            $(e.target).addClass("active")
+
+            //find enemy img
             enemyImgSc = $(e.target).find("img").attr("src")
 
         } else if ($(e.target).parents().hasClass('rsp-select-icon')) {
             enemy = $(e.target).parent().find("p").html()
             blok = $(e.target).parent().html()
 
+            //select description
+            $(".rsp-select__text").find(`.rsp-select-descr.active`).removeClass("active")
+            $(".rsp-select__text").find(`.rsp-select-descr[data-enemy="${enemy}"]`).addClass("active")
+                //select opponent icon
+            $(".rsp-select-icons").find(".rsp-select-icon.active").removeClass("active")
+            $(e.target).parent().addClass("active")
+
+            //find enemy img
             enemyImgSc = $(e.target).parent().find("img").attr("src")
 
         }

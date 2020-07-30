@@ -396,9 +396,35 @@ body {
 .rsp-welcome {
     display: none;
     &__text {
+        font-size: 40px;
         max-width: 50%;
         margin: 0 auto;
         padding: 20px;
+    }
+    &-anim {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: grey;
+        margin: 0 auto 100px auto;
+    }
+    &__img1 {
+        position: absolute;
+        top: 20px;
+        left: 54px;
+        animation: welcome-anim1 6s ease-in-out infinite;
+    }
+    &__img2 {
+        position: absolute;
+        top: 89px;
+        left: 16px;
+        animation: welcome-anim2 6s ease-in-out infinite;
+    }
+    &__img3 {
+        position: absolute;
+        top: 89px;
+        left: 91px;
+        animation: welcome-anim3 6s ease-in-out infinite;
     }
     &__button {
         display: inline-block;
@@ -410,14 +436,62 @@ body {
     }
 }
 
+@keyframes welcome-anim1 {
+    33% {
+        top: 89px;
+        left: 16px;
+    }
+    66% {
+        top: 89px;
+        left: 91px;
+    }
+    100% {
+        top: 20px;
+        left: 54px;
+    }
+}
+
+@keyframes welcome-anim2 {
+    33% {
+        top: 89px;
+        left: 91px;
+    }
+    66% {
+        top: 20px;
+        left: 54px;
+    }
+    100% {
+        top: 89px;
+        left: 16px;
+    }
+}
+
+@keyframes welcome-anim3 {
+    33% {
+        top: 20px;
+        left: 54px;
+    }
+    66% {
+        top: 89px;
+        left: 16px;
+    }
+    100% {
+        top: 89px;
+        left: 91px;
+    }
+}
+
 .rsp-welcome.active {
     display: block;
-    padding-top: 300px;
+    padding-top: 50px;
 }
 
 .rsp-select {
     display: none;
-    padding-top: 200px;
+    padding-top: 50px;
+    &-title {
+        font-size: 40px;
+    }
     &-icons {
         display: flex;
         justify-content: center;
@@ -432,11 +506,22 @@ body {
         cursor: pointer;
         border: 1px solid gold;
     }
+    &-icon.active {
+        background-color: blue;
+        border: 1px solid gold;
+    }
     &__img {}
     &__text {
         display: block;
         margin: 0 auto;
         padding: 20px;
+    }
+    &-descr {
+        display: none;
+        background-color: pink;
+    }
+    &-descr.active {
+        display: block;
     }
     &__button {
         display: inline-block;
