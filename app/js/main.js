@@ -50,7 +50,7 @@ $(function() {
     });
 
     //select screen
-    let enemy = ""
+    let enemy = "Солмир"
     let enemyImgSc = ""
     let blok = ""
     $('.rsp-select').on('click', function(e) {
@@ -78,7 +78,8 @@ $(function() {
             //select description
             $(".rsp-select__text").find(`.rsp-select-descr.active`).removeClass("active")
             $(".rsp-select__text").find(`.rsp-select-descr[data-enemy="${enemy}"]`).addClass("active")
-                //select opponent icon
+
+            //select opponent icon
             $(".rsp-select-icons").find(".rsp-select-icon.active").removeClass("active")
             $(e.target).parent().addClass("active")
 
@@ -86,16 +87,15 @@ $(function() {
             enemyImgSc = $(e.target).parent().find("img").attr("src")
 
         }
+
         // draw selected enemy name
         $(".rsp-select-choice").html(enemy)
-
-
 
 
         //start battle if enemy selected
         if ($(e.target).hasClass('rsp-select__button') && enemy) {
 
-            //del old enemyWrap
+            //delete old enemyWrap
             if ($('.enemyIcon')) {
                 console.log("del one")
                 $('.enemyIcon').remove()
@@ -120,9 +120,17 @@ $(function() {
         //choice playerArmy
         if ($(e.target).hasClass('rsp-select-icon')) {
             playerArmy = $(e.target).find("p").html()
+                //add class to acrive army
+            $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+            $(e.target).addClass("active")
         } else if ($(e.target).parents().hasClass('rsp-select-icon')) {
             playerArmy = $(e.target).parent().find("p").html()
+                //add class to acrive army
+            $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+            $(e.target).parent().addClass("active")
         }
+
+
         if (playerArmy == "Драконы") {
             playerChoice = 1
         } else if (playerArmy == "Рыцари") {
@@ -201,6 +209,25 @@ $(function() {
         if (matrix.has(currentKey) && playerChoice) {
             roundMessage = matrix.get(currentKey)
             alert(roundMessage)
+
+
+
+            //animfight 2 army
+            $(".rsp-game-choice").find(".rsp-game-armycomputer").addClass("rsp-game-fightenemy")
+            $(".rsp-game-choice").find(".rsp-game-armyplayer").addClass("rsp-game-fightplayer")
+            setTimeout(function() {
+                $(".rsp-game-choice").find(".rsp-game-armycomputer.rsp-game-fightenemy").removeClass("rsp-game-fightenemy")
+                $(".rsp-game-choice").find(".rsp-game-armyplayer.rsp-game-fightplayer").removeClass("rsp-game-fightplayer")
+
+            }, 2000)
+
+
+            // $(".rsp-game-choice").find(".rsp-game-armycomputer").css("animation", "rsp-game-fightenemy 3s ease-in-out 1")
+            // $(".rsp-game-choice").find(".rsp-game-armyplayer").css("animation", "rsp-game-fightplayer 3s ease-in-out 1")
+
+
+            //убираем выделение армии
+            $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
 
             //добавляем очки
             addPoint(roundMessage)
