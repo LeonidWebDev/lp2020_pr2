@@ -134,6 +134,7 @@ $(function() {
         document.querySelector(".rsp-game-armyplayer-img").src = armys.get(playerArmy)
         document.querySelector(".rsp-game-armyplayer-img").style.display = "block"
 
+
         if (playerArmy == "Драконы") {
             playerChoice = 1
         } else if (playerArmy == "Рыцари") {
@@ -215,11 +216,16 @@ $(function() {
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
         let currentKey = `${playerChoice} ${computerChoice}`
 
+        // draw icon for computer army
+        document.querySelector(".rsp-game-armycomputer-img").src = `./images/tabs/tab${computerChoice}.jpg`
+        document.querySelector(".rsp-game-armycomputer-img").style.display = "block"
+
         if (matrix.has(currentKey) && playerChoice) {
             roundMessage = matrix.get(currentKey)
             alert(roundMessage)
 
             // анимация иконок во время боя и расстановка обратно по ее завершению
+            // to do (убрать обработчик из цикла)
             document.querySelector(".rsp-game-armycomputer").addEventListener("transitionend", function(e) {
                 e.currentTarget.style.transform = 'translate(0px)'
                 e.currentTarget.style.transition = 'none'
@@ -227,6 +233,15 @@ $(function() {
             document.querySelector(".rsp-game-armyplayer").addEventListener("transitionend", function(e) {
                 e.currentTarget.style.transform = 'translate(0px)'
                 e.currentTarget.style.transition = 'none'
+
+                //сбрасываем выбор игрока
+                playerChoice = ""
+                document.querySelector(".rsp-game-armyplayer-img").style.display = "none"
+                    // сбрасываем выбор компьютера
+                document.querySelector(".rsp-game-armycomputer-img").style.display = "none"
+
+                //убираем выделение армии
+                $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
             })
 
             function animFight() {
@@ -255,8 +270,7 @@ $(function() {
             // $(".rsp-game-choice").find(".rsp-game-armyplayer").css("animation", "rsp-game-fightplayer 3s ease-in-out 1")
 
 
-            //убираем выделение армии
-            $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+
 
             //добавляем очки
             addPoint(roundMessage)
@@ -265,8 +279,7 @@ $(function() {
             setEnemyPoints(enemyPoints)
             setPlayerPoints(playerPoints)
 
-            //сбрасываем выбор игрока
-            playerChoice = ""
+
 
             //проверяем условия (3 победы)
             if (playerPoints == 3) {
