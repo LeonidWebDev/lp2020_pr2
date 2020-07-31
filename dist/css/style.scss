@@ -638,22 +638,31 @@ body {
 
 .rsp-end {
     display: none;
-    .rsp-end-exit {
-        display: inline-block;
-        background-color: magenta;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+    .rsp-end-playagain {
         padding: 20px;
         border: 1px solid gold;
+        margin: 10px;
     }
-    .rsp-end-again {
-        display: inline-block;
-        background-color: magenta;
+    .rsp-end-quit {
         padding: 20px;
         border: 1px solid gold;
+        margin: 10px;
+    }
+    .rsp-end-quit:hover {
+        background-color: blue;
+        cursor: pointer;
+    }
+    .rsp-end-playagain:hover {
+        background-color: blue;
+        cursor: pointer;
     }
 }
 
 .rsp-end.active {
-    display: block;
+    display: flex;
 }
 
 @import 'media';

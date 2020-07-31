@@ -38,13 +38,13 @@ $(function() {
     });
 
     //end screen
-    $('.rsp-end-exit').on('click', function(e) {
+    $('.rsp-end-quit').on('click', function(e) {
         $('.rsp-end').toggleClass("active")
         $('.rsp-welcome').toggleClass("active")
     });
 
     //play again
-    $('.rsp-end-again').on('click', function(e) {
+    $('.rsp-end-playagain').on('click', function(e) {
         $('.rsp-end').toggleClass("active")
         $('.rsp-select').toggleClass("active")
     });
@@ -212,7 +212,30 @@ $(function() {
     armys.set("Рыцари", "./images/tabs/tab2.jpg");
     armys.set("Джинны", "./images/tabs/tab3.jpg");
 
+    // сброс всех параметров раунда
+    function defaultRound() {
+        //сбрасываем выбор игрока
+        playerChoice = ""
+        document.querySelector(".rsp-game-armyplayer-img").style.display = "none"
+
+        document.querySelector(".rsp-game-armyplayer").style.transform = 'translate(0px)'
+        document.querySelector(".rsp-game-armyplayer").style.transition = 'none'
+            // сбрасываем выбор компьютера
+        document.querySelector(".rsp-game-armycomputer-img").style.display = "none"
+
+        document.querySelector(".rsp-game-armycomputer").style.transition = 'none'
+        document.querySelector(".rsp-game-armycomputer").style.transform = 'translate(0px)'
+
+        //убираем выделение армии
+        $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+    }
+
     $('.rsp-game-start').on('click', function(e) {
+        if (playerChoice == "") {
+
+            alert("вы собираетесь пойти в бой без армии?")
+            return
+        }
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
         let currentKey = `${playerChoice} ${computerChoice}`
 
@@ -226,22 +249,15 @@ $(function() {
 
             // анимация иконок во время боя и расстановка обратно по ее завершению
             // to do (убрать обработчик из цикла)
-            document.querySelector(".rsp-game-armycomputer").addEventListener("transitionend", function(e) {
-                e.currentTarget.style.transform = 'translate(0px)'
-                e.currentTarget.style.transition = 'none'
-            })
+            // document.querySelector(".rsp-game-armycomputer").addEventListener("transitionend", function(e) {
+            //     // e.currentTarget.style.transform = 'translate(0px)'
+            //     // e.currentTarget.style.transition = 'none'
+            // })
             document.querySelector(".rsp-game-armyplayer").addEventListener("transitionend", function(e) {
-                e.currentTarget.style.transform = 'translate(0px)'
-                e.currentTarget.style.transition = 'none'
+                // e.currentTarget.style.transform = 'translate(0px)'
+                // e.currentTarget.style.transition = 'none'
 
-                //сбрасываем выбор игрока
-                playerChoice = ""
-                document.querySelector(".rsp-game-armyplayer-img").style.display = "none"
-                    // сбрасываем выбор компьютера
-                document.querySelector(".rsp-game-armycomputer-img").style.display = "none"
-
-                //убираем выделение армии
-                $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+                defaultRound()
             })
 
             function animFight() {
@@ -269,9 +285,6 @@ $(function() {
             // $(".rsp-game-choice").find(".rsp-game-armycomputer").css("animation", "rsp-game-fightenemy 3s ease-in-out 1")
             // $(".rsp-game-choice").find(".rsp-game-armyplayer").css("animation", "rsp-game-fightplayer 3s ease-in-out 1")
 
-
-
-
             //добавляем очки
             addPoint(roundMessage)
 
@@ -282,18 +295,13 @@ $(function() {
 
 
             //проверяем условия (3 победы)
-            if (playerPoints == 3) {
-                alert("Поздравляем! Победа за вами")
+            if (playerPoints == 3 || enemyPoints == 3) {
 
-                $('.rsp-game').toggleClass("active")
-                $('.rsp-end').toggleClass("active")
+                defaultRound()
+                let result = playerPoints == 3 ? "Поздравляем! Победа за вами" : "Противник оказался сильнее";
+                alert(result)
 
-                //сбрасываем счет
-                pointsToZero()
-
-
-            } else if (enemyPoints == 3) {
-                alert("Противник оказался сильнее")
+                //смена сцены
                 $('.rsp-game').toggleClass("active")
                 $('.rsp-end').toggleClass("active")
 
