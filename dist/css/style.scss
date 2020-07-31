@@ -518,7 +518,7 @@ body {
     }
     &-descr {
         display: none;
-        background-color: pink;
+        background-color: blue;
     }
     &-descr.active {
         display: block;
@@ -539,67 +539,88 @@ body {
     display: none;
     background-color: purple;
     min-height: inherit;
-    &-enemy {
+    &-enemy,
+    &-own {
         width: 25%;
+        position: relative;
+        min-height: inherit;
+    }
+    &-enemy-icons,
+    &-player-icons {
+        margin-bottom: 90px;
     }
     &-title {
         font-size: 24px;
+        min-height: 200px;
     }
     &-battle {
+        position: relative;
         width: 50%;
         min-height: inherit;
-        padding-top: 50px;
+        padding-top: 30px;
         background-color: #ccc;
         border: 1px solid gold;
     }
     &-start {
+        position: absolute;
         display: inline-block;
         background-color: magenta;
         padding: 20px;
         border: 1px solid gold;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    &-own {
-        width: 25%;
-    }
-    &-playerPoints {
-        font-size: 32px;
-        background-color: blue;
-    }
+    &-playerPoints,
     &-enemyPoints {
-        font-size: 32px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 72px;
         background-color: blue;
     }
     &-choice {
         position: relative;
-        min-height: 200px;
         width: 100%;
+        min-height: 100px;
+        background-color: black;
+        margin-bottom: 100px;
     }
     &-armycomputer {
         position: absolute;
+        font-size: 64px;
+        line-height: 64px;
+        text-align: center;
         left: 0px;
-        border: 1px solid blue;
+        border: 1px solid gold;
+        min-width: 58px;
+        min-height: 64px;
     }
     &-armyplayer {
         position: absolute;
+        font-size: 64px;
+        line-height: 64px;
+        text-align: center;
         right: 0px;
-        border: 1px solid blue;
+        border: 1px solid gold;
+        min-width: 58px;
+        min-height: 64px;
     }
 }
 
-.rsp-game-fightenemy {
-    transform: translate(50px);
-    transition: transform 3s ease-out 0.5s;
-}
-
-.rsp-game-fightplayer {
-    transform: translate(-50px);
-    transition: transform 3s ease-out 0.5s;
-}
-
+// .rsp-game-fightenemy {
+//     transform: translate(50px);
+//     transition: transform 3s ease-out 0.1s;
+// }
+// .rsp-game-fightplayer {
+//     transform: translate(-50px);
+//     transition: transform 3s ease-out 0.1s;
+// }
 .rsp-game.active {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: start;
     text-align: center;
 }
 

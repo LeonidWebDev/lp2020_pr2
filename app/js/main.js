@@ -95,37 +95,37 @@ $(function() {
         //start battle if enemy selected
         if ($(e.target).hasClass('rsp-select__button') && enemy) {
 
-            //delete old enemyWrap
-            if ($('.enemyIcon')) {
-                console.log("del one")
-                $('.enemyIcon').remove()
-            }
+            // //delete old enemyWrap
+            // if ($('.enemyIcon')) {
+            //     console.log("del one")
+            //     $('.enemyIcon').remove()
+            // }
 
+            //new scene battle
             $('.rsp-select').toggleClass("active")
             $('.rsp-game').toggleClass("active")
 
-            //adding enemy icon and name
-            let enemyWrap = document.createElement('div');
-            enemyWrap.className = "enemyIcon";
-            enemyWrap.innerHTML = blok
-            console.log(enemyWrap)
-            $(".rsp-game-enemy").append(enemyWrap)
+            // //adding enemy icon and name
+            // let enemyWrap = document.createElement('div');
+            // enemyWrap.className = "enemyIcon";
+            // enemyWrap.innerHTML = blok
+            // console.log(enemyWrap)
+            // $(".rsp-game-enemy").append(enemyWrap)
         }
     });
 
     //battle screen
     let playerArmy = ""
-    $('.rsp-game-battle>.rsp-select-icons').on('click', function(e) {
-
+    $('.rsp-game-own>.rsp-select-icons').on('click', function(e) {
         //choice playerArmy
         if ($(e.target).hasClass('rsp-select-icon')) {
             playerArmy = $(e.target).find("p").html()
-                //add class to acrive army
+                //add class to active army
             $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
             $(e.target).addClass("active")
         } else if ($(e.target).parents().hasClass('rsp-select-icon')) {
             playerArmy = $(e.target).parent().find("p").html()
-                //add class to acrive army
+                //add class to active army
             $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
             $(e.target).parent().addClass("active")
         }
@@ -210,16 +210,36 @@ $(function() {
             roundMessage = matrix.get(currentKey)
             alert(roundMessage)
 
+            // анимация иконок во время боя и расстановка обратно по ее завершению
+            document.querySelector(".rsp-game-armycomputer").addEventListener("transitionend", function(e) {
+                e.currentTarget.style.transform = 'translate(0px)'
+                e.currentTarget.style.transition = 'none'
+            })
+            document.querySelector(".rsp-game-armyplayer").addEventListener("transitionend", function(e) {
+                e.currentTarget.style.transform = 'translate(0px)'
+                e.currentTarget.style.transition = 'none'
+            })
 
+            function animFight() {
+                ComputerIcon = document.querySelector(".rsp-game-armycomputer")
+                PlayerIcon = document.querySelector(".rsp-game-armyplayer")
+                ComputerIcon.style.transform = 'translate(150px)'
+                ComputerIcon.style.transition = 'transform 3s ease-out 0.1s'
+                PlayerIcon.style.transform = 'translate(-150px)'
+                PlayerIcon.style.transition = 'transform 3s ease-out 0.1s'
+            }
+            animFight()
 
             //animfight 2 army
-            $(".rsp-game-choice").find(".rsp-game-armycomputer").addClass("rsp-game-fightenemy")
-            $(".rsp-game-choice").find(".rsp-game-armyplayer").addClass("rsp-game-fightplayer")
-            setTimeout(function() {
-                $(".rsp-game-choice").find(".rsp-game-armycomputer.rsp-game-fightenemy").removeClass("rsp-game-fightenemy")
-                $(".rsp-game-choice").find(".rsp-game-armyplayer.rsp-game-fightplayer").removeClass("rsp-game-fightplayer")
+            // $(".rsp-game-choice").find(".rsp-game-armycomputer").addClass("rsp-game-fightenemy")
+            // $(".rsp-game-choice").find(".rsp-game-armyplayer").addClass("rsp-game-fightplayer")
 
-            }, 2000)
+
+            // setTimeout(function() {
+            //     $(".rsp-game-choice").find(".rsp-game-armycomputer.rsp-game-fightenemy").removeClass("rsp-game-fightenemy")
+            //     $(".rsp-game-choice").find(".rsp-game-armyplayer.rsp-game-fightplayer").removeClass("rsp-game-fightplayer")
+
+            // }, 2000)
 
 
             // $(".rsp-game-choice").find(".rsp-game-armycomputer").css("animation", "rsp-game-fightenemy 3s ease-in-out 1")
