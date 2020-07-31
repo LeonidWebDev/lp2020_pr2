@@ -607,6 +607,18 @@ body {
         min-width: 58px;
         min-height: 64px;
     }
+    &-armycomputer-img {
+        position: absolute;
+        display: none;
+        top: 0;
+        z-index: 2;
+    }
+    &-armyplayer-img {
+        position: absolute;
+        display: none;
+        top: 0;
+        z-index: 2;
+    }
 }
 
 // .rsp-game-fightenemy {

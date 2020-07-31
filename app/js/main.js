@@ -130,6 +130,9 @@ $(function() {
             $(e.target).parent().addClass("active")
         }
 
+        //add and select army-icon to battle
+        document.querySelector(".rsp-game-armyplayer-img").src = armys.get(playerArmy)
+        document.querySelector(".rsp-game-armyplayer-img").style.display = "block"
 
         if (playerArmy == "Драконы") {
             playerChoice = 1
@@ -156,6 +159,7 @@ $(function() {
     }
     let resultArr = ["YOU WIN", "YOU LOSE", "DRAW"]
     let matrix = new Map
+    let armys = new Map
     let roundMessage = ""
     let playerPoints = 0
     let enemyPoints = 0
@@ -201,6 +205,11 @@ $(function() {
     matrix.set("3 1", resultArr[1]);
     matrix.set("3 2", resultArr[0]);
     matrix.set("3 3", resultArr[2]);
+
+    //armys icon src
+    armys.set("Драконы", "./images/tabs/tab1.jpg");
+    armys.set("Рыцари", "./images/tabs/tab2.jpg");
+    armys.set("Джинны", "./images/tabs/tab3.jpg");
 
     $('.rsp-game-start').on('click', function(e) {
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
