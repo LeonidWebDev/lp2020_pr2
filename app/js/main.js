@@ -55,7 +55,7 @@ $(function() {
         //сбрасываем счет
         pointsToZero()
 
-        sceneChange(scenes[3], scenes[2])
+        sceneChange(scenes[3], scenes[1])
     });
 
     //select sceen
@@ -129,15 +129,15 @@ $(function() {
     // если армия еще не выбрана
     function emptyArmy() {
         if (playerChoice == "") {
-            alert("вы собираетесь пойти в бой без армии?")
-            return
-        }
+            drawMessage(`Необходимо выбрать войска`)
+            return true
+        } else return false
     }
 
     // выбор армии
     $('.rsp-game-own>.rsp-select-icons').on('click', function(e) {
+
         //choice playerArmy
-        // if (isAnimFight) return;
         if ($(e.target).hasClass('rsp-select-icon')) {
             playerArmy = $(e.target).find("p").html()
                 //add class to active army
@@ -172,7 +172,7 @@ $(function() {
     //game screen
     let WinNum = 3 // необходимое количество побед
     let playerChoice = "" // 1 or 2 or 3 
-    let isAnimFight = 0 // флаг анимации
+
 
     function ifVictory(WinNum) {
         if (playerPoints == WinNum || enemyPoints == WinNum) {
@@ -186,7 +186,7 @@ $(function() {
         }
     }
 
-    // сдучайное число
+    // случайное число
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -267,18 +267,22 @@ $(function() {
     }
     // анимация иконок во время боя и расстановка обратно по ее завершению
     document.querySelector(".rsp-game-armyplayer").addEventListener("transitionend", function(e) {
-        isAnimFight = 0
-        alert(roundMessage)
+
+        drawMessage(`${roundMessage}`) //to do (написать в сообщении кто побеждает кого и кому очко засчитывается)
         defaultRound()
-            //to do (написать в сообщении кто побеждает кого и кому очко засчитывается)
+
+        // проверка условий победы
+        ifVictory(WinNum)
     })
 
     // запускает раунд
     $('.rsp-game-start').on('click', function(e) {
-        emptyArmy()
+        if (emptyArmy()) return false
+
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
         let currentKey = `${playerChoice} ${computerChoice}`
 
+        // находим название выбранной армии компьютера
         for (let army of armys.keys()) {
             if (armys.get(army) == `./images/tabs/tab${computerChoice}.jpg`) {
                 drawMessage(`Игрок: ${playerArmy} приготовились к атаке <br> Компьютер: ${army} приготовились к атаке `)
@@ -292,10 +296,9 @@ $(function() {
         if (matrix.has(currentKey) && playerChoice) {
             roundMessage = matrix.get(currentKey)
 
-
             //анимация иконок с войсками
             function animFight() {
-                isAnimFight = 1
+
                 ComputerIcon = document.querySelector(".rsp-game-armycomputer")
                 PlayerIcon = document.querySelector(".rsp-game-armyplayer")
                 ComputerIcon.style.transform = 'translate(150px)'
@@ -312,21 +315,6 @@ $(function() {
             //показываем изменение результата
             setEnemyPoints(enemyPoints)
             setPlayerPoints(playerPoints)
-
-            // проверка условий победы
-            ifVictory(WinNum)
         }
-
     })
-
-    // class Game {
-    //     // методы класса
-    //     constructor() { ... }
-    //     method1() { ... }
-    //     method2() { ... }
-    //     method3() { ... }
-    //     ...
-    //   }
-
-
 })
