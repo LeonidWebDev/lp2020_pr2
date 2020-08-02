@@ -394,7 +394,8 @@ body {
 }
 
 .rsp-welcome {
-    display: none;
+    display: block;
+    padding-top: 50px;
     &__text {
         font-size: 40px;
         max-width: 50%;
@@ -481,11 +482,6 @@ body {
     }
 }
 
-.rsp-welcome.active {
-    display: block;
-    padding-top: 50px;
-}
-
 .rsp-select {
     display: none;
     padding-top: 50px;
@@ -531,12 +527,16 @@ body {
     }
 }
 
-.rsp-select.active {
-    display: block;
+.rsp-game-wrapper {
+    display: none;
+    min-height: inherit;
 }
 
 .rsp-game {
-    display: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    text-align: center;
     background-color: purple;
     min-height: inherit;
     &-enemy,
@@ -629,27 +629,24 @@ body {
 //     transform: translate(-50px);
 //     transition: transform 3s ease-out 0.1s;
 // }
-.rsp-game.active {
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    text-align: center;
-}
-
 .rsp-end {
     display: none;
-    align-items: center;
-    justify-content: center;
     min-height: inherit;
     .rsp-end-playagain {
+        display: inline-block;
         padding: 20px;
         border: 1px solid gold;
         margin: 10px;
+        margin-top: 25%;
+        transform: translateY(-50%)
     }
     .rsp-end-quit {
+        display: inline-block;
         padding: 20px;
         border: 1px solid gold;
         margin: 10px;
+        margin-top: 25%;
+        transform: translateY(-50%)
     }
     .rsp-end-quit:hover {
         background-color: blue;
@@ -659,10 +656,6 @@ body {
         background-color: blue;
         cursor: pointer;
     }
-}
-
-.rsp-end.active {
-    display: flex;
 }
 
 @import 'media';
