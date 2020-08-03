@@ -60,44 +60,21 @@ $(function() {
 
     //select sceen
     let enemy = "Солмир" //противник по дефолту
-    let enemyImgSrc = "" //адрес иконки противника (динамический) !!!
-    let blok = "" //  вроде ничего не делает отрефакторить !!!
 
     // выбор противника
     $('.rsp-select').on('click', function(e) {
 
         // find name of enemy
-        // много кода  отрефакторить!!!
-        if ($(e.target).hasClass('rsp-select-icon')) {
-            enemy = $(e.target).find("p").html()
-            blok = $(e.target).html()
-
-            //select description
-            $(".rsp-select__text").find(`.rsp-select-descr.active`).removeClass("active")
-            $(".rsp-select__text").find(`.rsp-select-descr[data-enemy="${enemy}"]`).addClass("active")
-
-            //select opponent icon
-            $(".rsp-select-icons").find(".rsp-select-icon.active").removeClass("active")
-            $(e.target).addClass("active")
-
-            //find enemy img
-            enemyImgSrc = $(e.target).find("img").attr("src")
-
-        } else if ($(e.target).parents().hasClass('rsp-select-icon')) {
-            enemy = $(e.target).parent().find("p").html()
-            blok = $(e.target).parent().html()
-
-            //select description
-            $(".rsp-select__text").find(`.rsp-select-descr.active`).removeClass("active")
-            $(".rsp-select__text").find(`.rsp-select-descr[data-enemy="${enemy}"]`).addClass("active")
-
-            //select opponent icon
-            $(".rsp-select-icons").find(".rsp-select-icon.active").removeClass("active")
-            $(e.target).parent().addClass("active")
-
-            //find enemy img
-            enemyImgSrc = $(e.target).parent().find("img").attr("src")
+        if (e.target.closest(".rsp-select-icon")) {
+            enemy = e.target.closest(".rsp-select-icon").lastElementChild.innerHTML
+                //select opponent icon
+            $(".rsp-select .rsp-select-icons").find(".rsp-select-icon.active").removeClass("active")
+            $(e.target.closest(".rsp-select-icon")).addClass("active")
         }
+
+        // переключаем описание выбранного противника
+        $(".rsp-select__text").find(`.rsp-select-descr.active`).removeClass("active")
+        $(".rsp-select__text").find(`.rsp-select-descr[data-enemy="${enemy}"]`).addClass("active")
 
         // draw selected enemy name
         $(".rsp-select-choice").html(enemy)
@@ -116,10 +93,6 @@ $(function() {
     //battle screen
     let playerArmy = "" // выбранная игроком армия
 
-    // игровые сообщения    
-    let gameMessages = [
-        ``
-    ]
 
     // показывает сообщения в окне сообщений
     function drawMessage(smt) {
@@ -137,18 +110,10 @@ $(function() {
     // выбор армии
     $('.rsp-game-own>.rsp-select-icons').on('click', function(e) {
 
-        //choice playerArmy
-        if ($(e.target).hasClass('rsp-select-icon')) {
-            playerArmy = $(e.target).find("p").html()
-                //add class to active army
-            $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
-            $(e.target).addClass("active")
-        } else if ($(e.target).parents().hasClass('rsp-select-icon')) {
-            playerArmy = $(e.target).parent().find("p").html()
-                //add class to active army
-            $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
-            $(e.target).parent().addClass("active")
-        }
+        // определяем выбранную армию, вешаем класс
+        playerArmy = e.target.closest(".rsp-select-icon").lastElementChild.innerHTML
+        $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+        $(e.target.closest(".rsp-select-icon")).addClass("active")
 
         drawMessage(`${playerArmy} приготовились к атаке`)
 
