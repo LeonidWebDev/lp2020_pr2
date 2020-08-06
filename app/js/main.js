@@ -60,6 +60,7 @@ $(function() {
 
     //select sceen
     let enemy = "Солмир" //противник по дефолту
+    let playerArmy = "" // выбранная игроком армия
 
     // выбор противника
     $('.rsp-select').on('click', function(e) {
@@ -91,9 +92,6 @@ $(function() {
     });
 
     //battle screen
-    let playerArmy = "" // выбранная игроком армия
-
-
     // показывает сообщения в окне сообщений
     function drawMessage(smt) {
         $(".rsp-game-title").html(smt)
