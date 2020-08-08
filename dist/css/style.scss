@@ -659,6 +659,7 @@ body {
 }
 
 @import 'media';
+// -----------------animation-------------------//
 .animation {}
 
 .knight {
@@ -670,56 +671,115 @@ body {
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: knight_animate 2s steps(9) infinite;
+    animation: knight_animate 1s steps(1) infinite;
 }
 
 @keyframes knight_animate {
     0% {
         background-position-x: 0px;
     }
-    100% {
-        background-position-x: -1080px;
+    12% {
+        background-position-x: -123px;
     }
-    // 0% {
-    //     background-position-x: 0px;
-    // }
-    // 12% {
-    //     background-position-x: 0px;
-    // }
-    // 12.1% {
-    //     background-position-x: -170px;
-    // }
-    // 25% {
-    //     background-position-x: -170px;
-    // }
-    // 25.1% {
-    //     background-position-x: -330px;
-    // }
-    // 37% {
-    //     background-position-x: -330px;
-    // }
-    // 37.1% {
-    //     background-position-x: -470px;
-    // }
-    // 49% {
-    //     background-position-x: -470px;
-    // }
-    // 49.1% {
-    //     background-position-x: -640px;
-    // }
-    // 62% {
-    //     background-position-x: -640px;
-    // }
-    // 62.1% {
-    //     background-position-x: -790px;
-    // }
-    // 75% {
-    //     background-position-x: -790px;
-    // }
-    // 75.1% {
-    //     background-position-x: -980px;
-    // }
-    // 100% {
-    //     background-position-x: -980px;
-    // }
+    25% {
+        background-position-x: -239px;
+    }
+    37% {
+        background-position-x: -356px;
+    }
+    50% {
+        background-position-x: -481px;
+    }
+    62% {
+        background-position-x: -599px;
+    }
+    75% {
+        background-position-x: -719px;
+    }
+    87% {
+        background-position-x: -843px;
+    }
+    100% {
+        background-position-x: -960px;
+    }
+}
+
+.animation {}
+
+.dragon {
+    border: 1px solid gold;
+    height: 140px;
+    width: 110px;
+    background-color: silver;
+    background-image: url(../images/Dragon_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: dragon_animate 1s steps(1) infinite;
+}
+
+@keyframes dragon_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    16% {
+        background-position-x: -108px;
+    }
+    32% {
+        background-position-x: -228px;
+        background-position-y: -2px;
+    }
+    50% {
+        background-position-x: -350px;
+    }
+    68% {
+        background-position-x: -473px;
+        background-position-y: 0px;
+    }
+    84% {
+        background-position-x: -596px;
+        background-position-y: -1px;
+    }
+    100% {
+        background-position-x: -707px;
+        background-position-y: 2px;
+    }
+}
+
+.animation {}
+
+.Genie {
+    border: 1px solid gold;
+    height: 100px;
+    width: 60px;
+    background-color: silver;
+    background-image: url(../images/Genie_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: Genie_animate 1s steps(1) infinite;
+}
+
+@keyframes Genie_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    16% {
+        background-position-x: -67px;
+    }
+    35% {
+        background-position-x: -138px;
+    }
+    50% {
+        background-position-x: -208px;
+    }
+    67% {
+        background-position-x: -276px;
+    }
+    85% {
+        background-position-x: -347px;
+    }
+    100% {
+        background-position-x: -422px;
+    }
 }
