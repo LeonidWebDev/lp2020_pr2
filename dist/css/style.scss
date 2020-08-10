@@ -783,3 +783,135 @@ body {
         background-position-x: -422px;
     }
 }
+
+.dragon__move {
+    border: 1px solid gold;
+    height: 150px;
+    width: 220px;
+    background-color: silver;
+    background-image: url(../images/Dragon_Move_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: dragon__move_animate 1s steps(1) infinite;
+}
+
+@keyframes dragon__move_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    9% {
+        background-position-x: -220px;
+    }
+    18% {
+        background-position-x: -465px;
+    }
+    27% {
+        background-position-x: -705px;
+    }
+    36% {
+        background-position-x: -955px;
+    }
+    45% {
+        background-position-x: -1223px;
+    }
+    55% {
+        background-position-x: -1480px;
+    }
+    64% {
+        background-position-x: -1745px;
+    }
+    76% {
+        background-position-x: -1950px;
+    }
+    88% {
+        background-position-x: -2160px;
+    }
+    100% {
+        background-position-x: -2365px;
+    }
+}
+
+.dragon__attack {
+    border: 1px solid gold;
+    height: 150px;
+    width: 220px;
+    background-color: silver;
+    background-image: url(../images/Dragon_Attack_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: dragon__attack_animate 1s steps(1) infinite;
+}
+
+@keyframes dragon__attack_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    12% {
+        background-position-x: -220px;
+    }
+    25% {
+        background-position-x: -455px;
+    }
+    37% {
+        background-position-x: -685px;
+    }
+    50% {
+        background-position-x: -928px;
+    }
+    66% {
+        background-position-x: -1195px;
+    }
+    78% {
+        background-position-x: -1450px;
+    }
+    90% {
+        background-position-x: -1727px;
+    }
+    100% {
+        background-position-x: -1937px;
+    }
+}
+
+.dragon__down {
+    border: 1px solid gold;
+    height: 150px;
+    width: 220px;
+    background-color: silver;
+    background-image: url(../images/Dragon_Down_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: dragon__down_animate 1s steps(1) infinite;
+}
+
+@keyframes dragon__down_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    12% {
+        background-position-x: -220px;
+    }
+    25% {
+        background-position-x: -453px;
+    }
+    37% {
+        background-position-x: -680px;
+    }
+    50% {
+        background-position-x: -915px;
+    }
+    66% {
+        background-position-x: -1185px;
+    }
+    78% {
+        background-position-x: -1440px;
+    }
+    90% {
+        background-position-x: -1720px;
+    }
+    100% {
+        background-position-x: -1930px;
+    }
+}
