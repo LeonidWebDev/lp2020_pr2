@@ -660,8 +660,6 @@ body {
 
 @import 'media';
 // -----------------animation-------------------//
-.animation {}
-
 .knight {
     border: 1px solid gold;
     height: 150px;
@@ -678,33 +676,34 @@ body {
     0% {
         background-position-x: 0px;
     }
-    12% {
+    11% {
         background-position-x: -123px;
     }
-    25% {
+    22% {
         background-position-x: -239px;
     }
-    37% {
+    33% {
         background-position-x: -356px;
     }
-    50% {
+    44% {
         background-position-x: -481px;
     }
-    62% {
+    55% {
         background-position-x: -599px;
     }
-    75% {
+    66% {
         background-position-x: -719px;
     }
-    87% {
+    77% {
         background-position-x: -843px;
     }
-    100% {
+    88% {
         background-position-x: -960px;
     }
+    100% {
+        background-position-x: 0px;
+    }
 }
-
-.animation {}
 
 .dragon {
     border: 1px solid gold;
@@ -722,31 +721,33 @@ body {
     0% {
         background-position-x: 0px;
     }
-    16% {
+    14% {
         background-position-x: -108px;
     }
-    32% {
+    28% {
         background-position-x: -228px;
         background-position-y: -2px;
     }
-    50% {
+    42% {
         background-position-x: -350px;
     }
-    68% {
+    56% {
         background-position-x: -473px;
         background-position-y: 0px;
     }
-    84% {
+    70% {
         background-position-x: -596px;
         background-position-y: -1px;
     }
-    100% {
+    85% {
         background-position-x: -707px;
         background-position-y: 2px;
     }
+    100% {
+        background-position-x: 0px;
+        background-position-y: 0px;
+    }
 }
-
-.animation {}
 
 .Genie {
     border: 1px solid gold;
@@ -764,23 +765,26 @@ body {
     0% {
         background-position-x: 0px;
     }
-    16% {
+    14% {
         background-position-x: -67px;
     }
-    35% {
+    28% {
         background-position-x: -138px;
     }
-    50% {
+    42% {
         background-position-x: -208px;
     }
-    67% {
+    56% {
         background-position-x: -276px;
     }
-    85% {
+    70% {
         background-position-x: -347px;
     }
-    100% {
+    85% {
         background-position-x: -422px;
+    }
+    100% {
+        background-position-x: 0px;
     }
 }
 
@@ -815,20 +819,23 @@ body {
     45% {
         background-position-x: -1223px;
     }
-    55% {
+    54% {
         background-position-x: -1480px;
     }
-    64% {
+    63% {
         background-position-x: -1745px;
     }
-    76% {
+    72% {
         background-position-x: -1950px;
     }
-    88% {
+    81% {
         background-position-x: -2160px;
     }
-    100% {
+    90% {
         background-position-x: -2365px;
+    }
+    100% {
+        background-position-x: 0px;
     }
 }
 
@@ -848,29 +855,32 @@ body {
     0% {
         background-position-x: 0px;
     }
-    12% {
+    11% {
         background-position-x: -220px;
     }
-    25% {
+    22% {
         background-position-x: -455px;
     }
-    37% {
+    33% {
         background-position-x: -685px;
     }
-    50% {
+    44% {
         background-position-x: -928px;
     }
-    66% {
+    55% {
         background-position-x: -1195px;
     }
-    78% {
+    66% {
         background-position-x: -1450px;
     }
-    90% {
+    77% {
         background-position-x: -1727px;
     }
-    100% {
+    89% {
         background-position-x: -1937px;
+    }
+    100% {
+        background-position-x: 0px;
     }
 }
 
@@ -890,28 +900,142 @@ body {
     0% {
         background-position-x: 0px;
     }
-    12% {
+    11% {
         background-position-x: -220px;
     }
-    25% {
+    22% {
         background-position-x: -453px;
     }
-    37% {
+    33% {
         background-position-x: -680px;
     }
-    50% {
+    44% {
         background-position-x: -915px;
     }
-    66% {
+    55% {
         background-position-x: -1185px;
     }
-    78% {
+    66% {
         background-position-x: -1440px;
     }
-    90% {
+    77% {
         background-position-x: -1720px;
     }
-    100% {
+    89% {
         background-position-x: -1930px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.Genie__move {
+    border: 1px solid gold;
+    height: 150px;
+    width: 80px;
+    background-color: silver;
+    background-image: url(../images/Genie_Move_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: Genie__move_animate 1s steps(1) infinite;
+}
+
+@keyframes Genie__move_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    17% {
+        background-position-x: -125px;
+    }
+    37% {
+        background-position-x: -255px;
+    }
+    50% {
+        background-position-x: -392px;
+    }
+    67% {
+        background-position-x: -520px;
+    }
+    85% {
+        background-position-x: -635px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.Genie__attack {
+    border: 1px solid gold;
+    height: 150px;
+    width: 130px;
+    background-color: silver;
+    background-image: url(../images/Genie_Attack_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: Genie__attack_animate 1s steps(1) infinite;
+}
+
+@keyframes Genie__attack_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    17% {
+        background-position-x: -125px;
+    }
+    37% {
+        background-position-x: -255px;
+    }
+    50% {
+        background-position-x: -392px;
+    }
+    67% {
+        background-position-x: -520px;
+    }
+    85% {
+        background-position-x: -635px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.Genie__down {
+    border: 1px solid gold;
+    height: 150px;
+    width: 130px;
+    background-color: silver;
+    background-image: url(../images/Genie_Down_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: Genie__down_animate 1s steps(1) infinite;
+}
+
+@keyframes Genie__down_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    15% {
+        background-position-x: -125px;
+    }
+    30% {
+        background-position-x: -255px;
+    }
+    45% {
+        background-position-x: -392px;
+    }
+    60% {
+        background-position-x: -520px;
+    }
+    75% {
+        background-position-x: -635px;
+    }
+    90% {
+        background-position-x: -735px;
+    }
+    100% {
+        background-position-x: 0px;
     }
 }
