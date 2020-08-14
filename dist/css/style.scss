@@ -705,6 +705,138 @@ body {
     }
 }
 
+.knight__down {
+    border: 1px solid gold;
+    height: 130px;
+    width: 150px;
+    background-color: silver;
+    background-image: url(../images/Champ_Down_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: knight__down_animate 1s steps(1) infinite;
+}
+
+@keyframes knight__down_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    12% {
+        background-position-x: -165px;
+    }
+    25% {
+        background-position-x: -322px;
+    }
+    37% {
+        background-position-x: -472px;
+    }
+    50% {
+        background-position-x: -644px;
+    }
+    62% {
+        background-position-x: -795px;
+    }
+    75% {
+        background-position-x: -990px;
+    }
+    87% {
+        background-position-x: -1200px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.knight__attack {
+    border: 1px solid gold;
+    height: 130px;
+    width: 150px;
+    background-color: silver;
+    background-image: url(../images/Champ_Attck_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: knight__attack_animate 1s steps(1) infinite;
+}
+
+@keyframes knight__attack_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    11% {
+        background-position-x: -165px;
+    }
+    22% {
+        background-position-x: -322px;
+    }
+    33% {
+        background-position-x: -472px;
+    }
+    44% {
+        background-position-x: -644px;
+    }
+    55% {
+        background-position-x: -795px;
+    }
+    66% {
+        background-position-x: -990px;
+    }
+    77% {
+        background-position-x: -1200px;
+    }
+    89% {
+        background-position-x: -1385px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.knight__move {
+    border: 1px solid gold;
+    height: 130px;
+    width: 150px;
+    background-color: silver;
+    background-image: url(../images/Champ_Move_Tile.png);
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    animation: knight__move_animate 1s steps(1) infinite;
+}
+
+@keyframes knight__move_animate {
+    0% {
+        background-position-x: 0px;
+    }
+    11% {
+        background-position-x: -165px;
+    }
+    22% {
+        background-position-x: -322px;
+    }
+    33% {
+        background-position-x: -472px;
+    }
+    44% {
+        background-position-x: -644px;
+    }
+    55% {
+        background-position-x: -795px;
+    }
+    66% {
+        background-position-x: -990px;
+    }
+    77% {
+        background-position-x: -1200px;
+    }
+    89% {
+        background-position-x: -1385px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
 .dragon {
     border: 1px solid gold;
     height: 140px;
