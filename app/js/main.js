@@ -116,8 +116,12 @@ $(function() {
         drawMessage(`${playerArmy} приготовились к атаке`)
 
         //add and select army-icon to battle
-        document.querySelector(".rsp-game-armyplayer-img").src = armys.get(playerArmy)
-        document.querySelector(".rsp-game-armyplayer-img").style.display = "block"
+        // document.querySelector(".rsp-game-armyplayer-img").src = armys.get(playerArmy)
+        // document.querySelector(".rsp-game-armyplayer-img").style.display = "block"
+        document.querySelector(".rsp-game-armyplayer").classList = "rsp-game-armyplayer"
+        document.querySelector(".rsp-game-armyplayer").classList.add(armys.get(playerArmy))
+            //.classList.add('knight')  Genie   dragon
+
 
 
         if (playerArmy == "Драконы") {
@@ -207,9 +211,9 @@ $(function() {
     matrix.set("3 3", resultArr[2]);
 
     //armys icon src
-    armys.set("Драконы", "./images/tabs/tab1.jpg");
-    armys.set("Рыцари", "./images/tabs/tab2.jpg");
-    armys.set("Джинны", "./images/tabs/tab3.jpg");
+    armys.set("Драконы", "dragon");
+    armys.set("Рыцари", "knight");
+    armys.set("Джинны", "Genie");
 
     // сброс всех параметров раунда
     function defaultRound() {
