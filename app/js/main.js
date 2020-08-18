@@ -120,7 +120,6 @@ $(function() {
         // document.querySelector(".rsp-game-armyplayer-img").style.display = "block"
         document.querySelector(".rsp-game-armyplayer").classList = "rsp-game-armyplayer"
         document.querySelector(".rsp-game-armyplayer").classList.add(armys.get(playerArmy))
-            //.classList.add('knight')  Genie   dragon
 
 
 
@@ -163,6 +162,7 @@ $(function() {
     let resultArr = ["YOU WIN", "YOU LOSE", "DRAW"]
     let matrix = new Map
     let armys = new Map
+    let animations = new Map
     let roundMessage = ""
     let playerPoints = 0
     let enemyPoints = 0
@@ -213,7 +213,22 @@ $(function() {
     //armys icon src
     armys.set("Драконы", "dragon");
     armys.set("Рыцари", "knight");
-    armys.set("Джинны", "Genie");
+    armys.set("Джинны", "genie");
+
+    //animations class names
+    animations.set("1", "dragon");
+    animations.set("2", "knight");
+    animations.set("3", "genie");
+    animations.set("4", "genie__move");
+    animations.set("5", "genie__attack");
+    animations.set("6", "genie__down");
+    animations.set("7", "knight__move");
+    animations.set("8", "knight__attack");
+    animations.set("9", "knight__down");
+    animations.set("10", "dragon__move");
+    animations.set("11", "dragon__attack");
+    animations.set("12", "dragon__down");
+
 
     // сброс всех параметров раунда
     function defaultRound() {
@@ -257,8 +272,10 @@ $(function() {
         }
 
         // draw icon for computer army
-        document.querySelector(".rsp-game-armycomputer-img").src = `./images/tabs/tab${computerChoice}.jpg`
-        document.querySelector(".rsp-game-armycomputer-img").style.display = "block"
+        // document.querySelector(".rsp-game-armycomputer-img").src = `./images/tabs/tab${computerChoice}.jpg`
+        // document.querySelector(".rsp-game-armycomputer-img").style.display = "block"
+        document.querySelector(".rsp-game-armycomputer").classList = "rsp-game-armycomputer"
+        document.querySelector(".rsp-game-armycomputer").classList.add(animations.get(`${computerChoice}`))
 
         if (matrix.has(currentKey) && playerChoice) {
             roundMessage = matrix.get(currentKey)

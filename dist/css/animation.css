@@ -229,7 +229,7 @@
     }
 }
 
-.Genie {
+.genie {
     border: 1px solid gold;
     height: 100px;
     width: 60px;
@@ -238,10 +238,10 @@
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: Genie_animate 1s steps(1) infinite;
+    animation: genie_animate 1s steps(1) infinite;
 }
 
-@keyframes Genie_animate {
+@keyframes genie_animate {
     0% {
         background-position-x: 0px;
     }
@@ -409,7 +409,7 @@
     }
 }
 
-.Genie__move {
+.genie__move {
     border: 1px solid gold;
     height: 150px;
     width: 80px;
@@ -418,10 +418,10 @@
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: Genie__move_animate 1s steps(1) infinite;
+    animation: genie__move_animate 1s steps(1) infinite;
 }
 
-@keyframes Genie__move_animate {
+@keyframes genie__move_animate {
     0% {
         background-position-x: 0px;
     }
@@ -445,7 +445,7 @@
     }
 }
 
-.Genie__attack {
+.genie__attack {
     border: 1px solid gold;
     height: 150px;
     width: 130px;
@@ -454,10 +454,10 @@
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: Genie__attack_animate 1s steps(1) infinite;
+    animation: genie__attack_animate 1s steps(1) infinite;
 }
 
-@keyframes Genie__attack_animate {
+@keyframes genie__attack_animate {
     0% {
         background-position-x: 0px;
     }
@@ -481,7 +481,7 @@
     }
 }
 
-.Genie__down {
+.genie__down {
     border: 1px solid gold;
     height: 150px;
     width: 130px;
@@ -490,10 +490,10 @@
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: Genie__down_animate 1s steps(1) infinite;
+    animation: genie__down_animate 1s steps(1) infinite;
 }
 
-@keyframes Genie__down_animate {
+@keyframes genie__down_animate {
     0% {
         background-position-x: 0px;
     }
