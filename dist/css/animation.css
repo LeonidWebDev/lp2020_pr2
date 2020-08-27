@@ -13,7 +13,7 @@
     height: 150px;
     width: 120px;
     background-color: silver;
-    background-image: url(../images/Knight_tileMap2.png);
+    background-image: url(../images/Champion_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
@@ -25,28 +25,28 @@
         background-position-x: 0px;
     }
     11% {
-        background-position-x: -123px;
+        background-position-x: -165px;
     }
     22% {
-        background-position-x: -239px;
+        background-position-x: -322px;
     }
     33% {
-        background-position-x: -356px;
+        background-position-x: -472px;
     }
     44% {
-        background-position-x: -481px;
+        background-position-x: -644px;
     }
     55% {
-        background-position-x: -599px;
+        background-position-x: -795px;
     }
     66% {
-        background-position-x: -719px;
+        background-position-x: -990px;
     }
     77% {
-        background-position-x: -843px;
+        background-position-x: -1200px;
     }
-    88% {
-        background-position-x: -960px;
+    89% {
+        background-position-x: -1385px;
     }
     100% {
         background-position-x: 0px;
@@ -202,30 +202,25 @@
         background-position-x: 0px;
     }
     14% {
-        background-position-x: -108px;
+        background-position-x: -220px;
     }
     28% {
-        background-position-x: -228px;
-        background-position-y: -2px;
+        background-position-x: -465px;
     }
     42% {
-        background-position-x: -350px;
+        background-position-x: -705px;
     }
     56% {
-        background-position-x: -473px;
-        background-position-y: 0px;
+        background-position-x: -955px;
     }
     70% {
-        background-position-x: -596px;
-        background-position-y: -1px;
+        background-position-x: -1223px;
     }
     85% {
-        background-position-x: -707px;
-        background-position-y: 2px;
+        background-position-x: -1480px;
     }
     100% {
         background-position-x: 0px;
-        background-position-y: 0px;
     }
 }
 
@@ -234,7 +229,7 @@
     height: 100px;
     width: 60px;
     background-color: silver;
-    background-image: url(../images/Genie_Tile.png);
+    background-image: url(../images/genie_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
@@ -245,23 +240,23 @@
     0% {
         background-position-x: 0px;
     }
-    14% {
-        background-position-x: -67px;
+    15% {
+        background-position-x: -125px;
     }
-    28% {
-        background-position-x: -138px;
+    30% {
+        background-position-x: -255px;
     }
-    42% {
-        background-position-x: -208px;
+    45% {
+        background-position-x: -392px;
     }
-    56% {
-        background-position-x: -276px;
+    60% {
+        background-position-x: -520px;
     }
-    70% {
-        background-position-x: -347px;
+    75% {
+        background-position-x: -635px;
     }
-    85% {
-        background-position-x: -422px;
+    90% {
+        background-position-x: -735px;
     }
     100% {
         background-position-x: 0px;

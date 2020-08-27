@@ -236,31 +236,39 @@ $(function() {
         playerChoice = ""
         document.querySelector(".rsp-game-armyplayer-img").style.display = "none"
 
-        document.querySelector(".rsp-game-armyplayer").style.transform = 'translate(0px)'
-        document.querySelector(".rsp-game-armyplayer").style.transition = 'none'
-            // сбрасываем выбор компьютера
+        // document.querySelector(".rsp-game-armyplayer").style.transform = 'translate(0px)'
+        // document.querySelector(".rsp-game-armyplayer").style.transition = 'none'
+
+        // сбрасываем выбор компьютера
         document.querySelector(".rsp-game-armycomputer-img").style.display = "none"
 
-        document.querySelector(".rsp-game-armycomputer").style.transition = 'none'
-        document.querySelector(".rsp-game-armycomputer").style.transform = 'translate(0px)'
+        // document.querySelector(".rsp-game-armycomputer").style.transition = 'none'
+        // document.querySelector(".rsp-game-armycomputer").style.transform = 'translate(0px)'
 
         //убираем выделение армии
         $(".rsp-select-icons.battle").find(".rsp-select-icon.active").removeClass("active")
+
+        //убираем анимации армий
+        document.querySelector(".rsp-game-armycomputer").classList = "rsp-game-armycomputer"
+        document.querySelector(".rsp-game-armyplayer").classList = "rsp-game-armyplayer"
+
     }
     // анимация иконок во время боя и расстановка обратно по ее завершению
-    document.querySelector(".rsp-game-armyplayer").addEventListener("transitionend", function(e) {
+    // document.querySelector(".rsp-game-armyplayer").addEventListener("transitionend", function(e) {
 
-        drawMessage(`${roundMessage}`) //to do (написать в сообщении кто побеждает кого и кому очко засчитывается)
-        defaultRound()
+    //     drawMessage(`${roundMessage}`) //to do (написать в сообщении кто побеждает кого и кому очко засчитывается)
+    //     defaultRound()
 
-        // проверка условий победы
-        ifVictory(WinNum)
-    })
+    //     // проверка условий победы
+    //     ifVictory(WinNum)
+    // })
 
     // запускает раунд
     $('.rsp-game-start').on('click', function(e) {
+        //если не выбрана армия
         if (emptyArmy()) return false
 
+        //компьютер выбирает войска
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
         let currentKey = `${playerChoice} ${computerChoice}`
 
@@ -271,27 +279,80 @@ $(function() {
             }
         }
 
-        // draw icon for computer army
-        // document.querySelector(".rsp-game-armycomputer-img").src = `./images/tabs/tab${computerChoice}.jpg`
-        // document.querySelector(".rsp-game-armycomputer-img").style.display = "block"
-        document.querySelector(".rsp-game-armycomputer").classList = "rsp-game-armycomputer"
-        document.querySelector(".rsp-game-armycomputer").classList.add(animations.get(`${computerChoice}`))
-
         if (matrix.has(currentKey) && playerChoice) {
+            //сообщение о результате боя
             roundMessage = matrix.get(currentKey)
 
-            //анимация иконок с войсками
-            function animFight() {
+            // //перемещение иконок с войсками
+            // function animFight() {
+            //     ComputerIcon = document.querySelector(".rsp-game-armycomputer")
+            // PlayerIcon = document.querySelector(".rsp-game-armyplayer .knight")
+            //     ComputerIcon.style.transform = 'translate(150px)'
+            //     ComputerIcon.style.transition = 'transform 1s ease-out 0.1s'
+            //     PlayerIcon.style.transform = 'translate(-150px)'
+            //     PlayerIcon.style.transition = 'transform 1s ease-out 0.1s'
+            // }
+            // // анимация боя
+            // animFight()
 
-                ComputerIcon = document.querySelector(".rsp-game-armycomputer")
-                PlayerIcon = document.querySelector(".rsp-game-armyplayer")
-                ComputerIcon.style.transform = 'translate(150px)'
-                ComputerIcon.style.transition = 'transform 3s ease-out 0.1s'
-                PlayerIcon.style.transform = 'translate(-150px)'
-                PlayerIcon.style.transition = 'transform 3s ease-out 0.1s'
+
+            // function move_old() {
+            //     document.querySelector(".rsp-game-armycomputer").classList = "rsp-game-armycomputer"
+            //     document.querySelector(".rsp-game-armycomputer").classList.add(animations.get(`${computerChoice}`) + '__move')
+
+            //     // animate playerarmy as move
+            //     document.querySelector(".rsp-game-armyplayer").classList.add(armys.get(playerArmy) + '__move')
+
+            //     // window.requestAnimationFrame(function() {
+            //     //     move_attack1()
+            //     // })
+            // }
+
+            let lastTime1 = 0
+            let deltaTime1 = 0
+            let animDuration = 4000
+            let objAnim = document.querySelector(".rsp-game-armyplayer")
+            PlayerIcon = document.querySelector(".rsp-game-armyplayer")
+
+            function move_attack() {
+                if (lastTime1 !== 0) {
+                    deltaTime1 = Date.now() - lastTime1
+                    animDuration -= deltaTime1
+                }
+
+                if (animDuration < 0) {
+                    objAnim.classList = "rsp-game-armyplayer knight"
+                    return
+
+                } else
+                if (animDuration < 2000) {
+                    objAnim.classList = "rsp-game-armyplayer knight__attack"
+
+                } else
+                if (animDuration < 4000) {
+                    objAnim.classList = "rsp-game-armyplayer knight__move"
+
+                }
+
+                lastTime1 = Date.now()
+
+                window.requestAnimationFrame(function() {
+                    move_attack()
+                })
             }
-            // анимация боя
-            animFight()
+
+            move_attack()
+
+
+            // после анимации
+            function after_animation() {
+                drawMessage(`${roundMessage}`) //to do (написать в сообщении кто побеждает кого и кому очко засчитывается)
+                defaultRound()
+
+                // проверка условий победы
+                ifVictory(WinNum)
+            }
+            after_animation()
 
             //добавляем очки
             addPoint(roundMessage)
@@ -301,4 +362,44 @@ $(function() {
             setPlayerPoints(playerPoints)
         }
     })
+
+    //    testing .... 
+    let lastTime1 = 0
+    let deltaTime1 = 0
+    let animDuration = 4000
+    let objAnim = document.querySelector(".rsp-game-armyplayer .knight")
+    let distance = 150
+    PlayerIcon = document.querySelector(".rsp-game-armyplayer")
+
+
+    function move_attack() {
+        if (lastTime1 !== 0) {
+            deltaTime1 = Date.now() - lastTime1
+            animDuration -= deltaTime1
+        }
+
+        if (animDuration < 0 && distance < 0) {
+            objAnim.classList = "rsp-game-armyplayer knight"
+            return
+
+        } else
+        if (animDuration < 2000) {
+            objAnim.classList = "rsp-game-armyplayer knight__attack"
+            PlayerIcon.style.right += 1
+            distance--
+
+        } else
+        if (animDuration < 4000) {
+            objAnim.classList = "rsp-game-armyplayer knight__move"
+
+        }
+
+        lastTime1 = Date.now()
+
+        window.requestAnimationFrame(function() {
+            move_attack()
+        })
+    }
+
+
 })
