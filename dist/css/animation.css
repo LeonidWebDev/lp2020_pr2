@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: knight_animate 1s steps(1) infinite;
+    animation: knight_animate 2s steps(1) infinite;
 }
 
 @keyframes knight_animate {
@@ -28,7 +28,7 @@
         background-position-x: -165px;
     }
     22% {
-        background-position-x: -322px;
+        background-position-x: -323px;
     }
     33% {
         background-position-x: -472px;
@@ -37,16 +37,16 @@
         background-position-x: -644px;
     }
     55% {
-        background-position-x: -795px;
+        background-position-x: -796px;
     }
     66% {
-        background-position-x: -990px;
+        background-position-x: -992px;
     }
     77% {
-        background-position-x: -1200px;
+        background-position-x: -1203px;
     }
     89% {
-        background-position-x: -1385px;
+        background-position-x: -1388px;
     }
     100% {
         background-position-x: 0px;
@@ -188,7 +188,7 @@
 .dragon {
     border: 1px solid gold;
     height: 140px;
-    width: 110px;
+    width: 120px;
     background-color: silver;
     background-image: url(../images/Dragon_Tile.png);
     background-repeat: no-repeat;
@@ -199,25 +199,25 @@
 
 @keyframes dragon_animate {
     0% {
-        background-position-x: 0px;
+        background-position-x: -40px;
     }
     14% {
-        background-position-x: -220px;
+        background-position-x: -260px;
     }
     28% {
-        background-position-x: -465px;
+        background-position-x: -495px;
     }
     42% {
-        background-position-x: -705px;
+        background-position-x: -725px;
     }
     56% {
-        background-position-x: -955px;
+        background-position-x: -969px;
     }
     70% {
-        background-position-x: -1223px;
+        background-position-x: -1237px;
     }
     85% {
-        background-position-x: -1480px;
+        background-position-x: -1491px;
     }
     100% {
         background-position-x: 0px;
@@ -227,7 +227,7 @@
 .genie {
     border: 1px solid gold;
     height: 100px;
-    width: 60px;
+    width: 120px;
     background-color: silver;
     background-image: url(../images/genie_Tile.png);
     background-repeat: no-repeat;
@@ -238,25 +238,25 @@
 
 @keyframes genie_animate {
     0% {
-        background-position-x: 0px;
+        background-position-x: 30px;
     }
     15% {
-        background-position-x: -125px;
+        background-position-x: -95px;
     }
     30% {
-        background-position-x: -255px;
+        background-position-x: -223px;
     }
     45% {
-        background-position-x: -392px;
+        background-position-x: -358px;
     }
     60% {
-        background-position-x: -520px;
+        background-position-x: -488px;
     }
     75% {
-        background-position-x: -635px;
+        background-position-x: -603px;
     }
     90% {
-        background-position-x: -735px;
+        background-position-x: -699px;
     }
     100% {
         background-position-x: 0px;

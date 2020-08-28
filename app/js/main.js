@@ -107,6 +107,7 @@ $(function() {
 
     // выбор армии
     $('.rsp-game-own>.rsp-select-icons').on('click', function(e) {
+        if (is_animate) return false
 
         // определяем выбранную армию, вешаем класс
         playerArmy = e.target.closest(".rsp-select-icon").lastElementChild.innerHTML
@@ -118,7 +119,7 @@ $(function() {
         //add and select army-icon to battle
         // document.querySelector(".rsp-game-armyplayer-img").src = armys.get(playerArmy)
         // document.querySelector(".rsp-game-armyplayer-img").style.display = "block"
-        document.querySelector(".rsp-game-armyplayer").classList = "rsp-game-armyplayer"
+        document.querySelector(".rsp-game-armyplayer").classList = "rsp-game-armyplayer scaledX"
         document.querySelector(".rsp-game-armyplayer").classList.add(armys.get(playerArmy))
 
 
@@ -166,6 +167,7 @@ $(function() {
     let roundMessage = ""
     let playerPoints = 0
     let enemyPoints = 0
+    let is_animate = 0
 
 
     //проверка, кому засчитывать очки
@@ -266,7 +268,9 @@ $(function() {
     // запускает раунд
     $('.rsp-game-start').on('click', function(e) {
         //если не выбрана армия
-        if (emptyArmy()) return false
+        if (emptyArmy() || is_animate) return false
+        is_animate = 1
+
 
         //компьютер выбирает войска
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
@@ -312,7 +316,7 @@ $(function() {
             let deltaTime1 = 0
             let animDuration = 4000
             let objAnim = document.querySelector(".rsp-game-armyplayer")
-            PlayerIcon = document.querySelector(".rsp-game-armyplayer")
+            let obj_C_Anim = document.querySelector(".rsp-game-armycomputer")
 
             function move_attack() {
                 if (lastTime1 !== 0) {
@@ -320,17 +324,31 @@ $(function() {
                     animDuration -= deltaTime1
                 }
 
+
                 if (animDuration < 0) {
-                    objAnim.classList = "rsp-game-armyplayer knight"
+                    is_animate = 0
+                    objAnim.classList = `rsp-game-armyplayer ${armys.get(playerArmy)} scaledX`
+                    obj_C_Anim.classList = `rsp-game-armycomputer ${animations.get(String(computerChoice))}`
                     return
 
                 } else
                 if (animDuration < 2000) {
-                    objAnim.classList = "rsp-game-armyplayer knight__attack"
+                    if (matrix.get(currentKey) == "YOU WIN") {
+                        objAnim.classList = `rsp-game-armyplayer ${armys.get(playerArmy)}__attack scaledX`
+                        obj_C_Anim.classList = `rsp-game-armycomputer ${animations.get(String(computerChoice))}__down`
+                    } else if (matrix.get(currentKey) == "YOU LOSE") {
+                        objAnim.classList = `rsp-game-armyplayer ${armys.get(playerArmy)}__down scaledX`
+                        obj_C_Anim.classList = `rsp-game-armycomputer ${animations.get(String(computerChoice))}__attack`
+
+                    } else if (matrix.get(currentKey) == "DRAW") {
+                        objAnim.classList = `rsp-game-armyplayer ${armys.get(playerArmy)}__attack scaledX`
+                        obj_C_Anim.classList = `rsp-game-armycomputer ${animations.get(String(computerChoice))}__attack`
+                    }
 
                 } else
                 if (animDuration < 4000) {
-                    objAnim.classList = "rsp-game-armyplayer knight__move"
+                    objAnim.classList = `rsp-game-armyplayer ${armys.get(playerArmy)}__move scaledX`
+                    obj_C_Anim.classList = `rsp-game-armycomputer ${animations.get(String(computerChoice))}__move`
 
                 }
 
