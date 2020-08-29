@@ -167,7 +167,7 @@ $(function() {
     let roundMessage = ""
     let playerPoints = 0
     let enemyPoints = 0
-    let is_animate = 0
+    let is_animate = 0 // когда анимейт нельзя кликнуть на кнопку боя или выбрать армию
 
 
     //проверка, кому засчитывать очки
@@ -276,6 +276,24 @@ $(function() {
         let computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
         let currentKey = `${playerChoice} ${computerChoice}`
 
+        // результат выбора армии противника, зависит от выбора оппонента
+        // Солмир - жулик, Сэр Мюллих - рандом, Эллезар - повторяется
+        if (enemy == "Солмир") {
+            if (playerChoice == 1) {
+                computerChoice = 2
+            } else if (playerChoice == 2) {
+                computerChoice = 3
+            } else if (playerChoice == 3) {
+                computerChoice = 1
+            }
+        } else if (enemy == "Сэр Мюллих") {
+            computerChoice = getRandomInt(1, 4) // = > 1 || 2 || 3
+        } else if (enemy == "Эллезар") {
+            computerChoice = 1
+        }
+        currentKey = `${playerChoice} ${computerChoice}`
+
+
         // находим название выбранной армии компьютера
         for (let army of armys.keys()) {
             if (armys.get(army) == `./images/tabs/tab${computerChoice}.jpg`) {
@@ -317,6 +335,7 @@ $(function() {
             let animDuration = 4000
             let objAnim = document.querySelector(".rsp-game-armyplayer")
             let obj_C_Anim = document.querySelector(".rsp-game-armycomputer")
+            let distance = 100
 
             function move_attack() {
                 if (lastTime1 !== 0) {
@@ -349,6 +368,8 @@ $(function() {
                 if (animDuration < 4000) {
                     objAnim.classList = `rsp-game-armyplayer ${armys.get(playerArmy)}__move scaledX`
                     obj_C_Anim.classList = `rsp-game-armycomputer ${animations.get(String(computerChoice))}__move`
+                    distance--
+                    objAnim.style.right = `${150 - distance}px`
 
                 }
 
