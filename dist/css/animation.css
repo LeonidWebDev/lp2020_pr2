@@ -11,7 +11,7 @@
 .knight {
     border: 1px solid gold;
     height: 150px;
-    width: 120px;
+    width: 150px;
     background-color: silver;
     background-image: url(../images/Champion_Tile.png);
     background-repeat: no-repeat;
@@ -55,94 +55,98 @@
 
 .knight__down {
     border: 1px solid gold;
-    height: 130px;
+    height: 150px;
     width: 150px;
     background-color: silver;
     background-image: url(../images/Champ_Down_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: knight__down_animate 1s steps(1) infinite;
+    animation: knight__down_animate 1s steps(1) 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes knight__down_animate {
     0% {
         background-position-x: 0px;
+        background-position-y: 25px;
     }
-    12% {
+    14% {
         background-position-x: -165px;
+        background-position-y: 25px;
     }
-    25% {
+    28% {
         background-position-x: -322px;
+        background-position-y: 25px;
     }
-    37% {
+    45% {
         background-position-x: -472px;
+        background-position-y: 25px;
     }
-    50% {
+    58% {
         background-position-x: -644px;
+        background-position-y: 25px;
     }
-    62% {
+    72% {
         background-position-x: -795px;
+        background-position-y: 25px;
     }
-    75% {
+    88% {
         background-position-x: -990px;
-    }
-    87% {
-        background-position-x: -1200px;
+        background-position-y: 25px;
     }
     100% {
-        background-position-x: 0px;
+        background-position-x: -1200px;
+        background-position-y: 25px;
     }
 }
 
 .knight__attack {
     border: 1px solid gold;
-    height: 130px;
+    height: 150px;
     width: 150px;
     background-color: silver;
     background-image: url(../images/Champ_Attck_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: knight__attack_animate 1s steps(1) infinite;
+    animation: knight__attack_animate 1s steps(1) 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes knight__attack_animate {
     0% {
         background-position-x: 0px;
     }
-    11% {
+    13% {
         background-position-x: -165px;
     }
-    22% {
+    26% {
         background-position-x: -322px;
     }
-    33% {
+    39% {
         background-position-x: -472px;
     }
-    44% {
+    52% {
         background-position-x: -644px;
     }
-    55% {
+    64% {
         background-position-x: -795px;
     }
-    66% {
+    76% {
         background-position-x: -990px;
     }
-    77% {
+    88% {
         background-position-x: -1200px;
     }
-    89% {
-        background-position-x: -1385px;
-    }
     100% {
-        background-position-x: 0px;
+        background-position-x: -1385px;
     }
 }
 
 .knight__move {
     border: 1px solid gold;
-    height: 130px;
+    height: 150px;
     width: 150px;
     background-color: silver;
     background-image: url(../images/Champ_Move_Tile.png);
@@ -188,7 +192,7 @@
 .dragon {
     border: 1px solid gold;
     height: 140px;
-    width: 120px;
+    width: 200px;
     background-color: silver;
     background-image: url(../images/Dragon_Tile.png);
     background-repeat: no-repeat;
@@ -226,8 +230,8 @@
 
 .genie {
     border: 1px solid gold;
-    height: 100px;
-    width: 120px;
+    height: 150px;
+    width: 150px;
     background-color: silver;
     background-image: url(../images/genie_Tile.png);
     background-repeat: no-repeat;
@@ -266,7 +270,7 @@
 .dragon__move {
     border: 1px solid gold;
     height: 150px;
-    width: 220px;
+    width: 230px;
     background-color: silver;
     background-image: url(../images/Dragon_Move_Tile.png);
     background-repeat: no-repeat;
@@ -277,37 +281,37 @@
 
 @keyframes dragon__move_animate {
     0% {
-        background-position-x: 0px;
+        background-position-x: 20px;
     }
     9% {
-        background-position-x: -220px;
+        background-position-x: -200px;
     }
     18% {
-        background-position-x: -465px;
+        background-position-x: -425px;
     }
     27% {
-        background-position-x: -705px;
+        background-position-x: -660px;
     }
     36% {
-        background-position-x: -955px;
+        background-position-x: -910px;
     }
     45% {
-        background-position-x: -1223px;
+        background-position-x: -1177px;
     }
     54% {
-        background-position-x: -1480px;
+        background-position-x: -1431px;
     }
     63% {
-        background-position-x: -1745px;
+        background-position-x: -1700px;
     }
     72% {
-        background-position-x: -1950px;
+        background-position-x: -1910px;
     }
     81% {
-        background-position-x: -2160px;
+        background-position-x: -2120px;
     }
     90% {
-        background-position-x: -2365px;
+        background-position-x: -2375px;
     }
     100% {
         background-position-x: 0px;
@@ -323,91 +327,78 @@
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: dragon__attack_animate 1s steps(1) infinite;
+    animation: dragon__attack_animate 1s steps(1) 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes dragon__attack_animate {
     0% {
         background-position-x: 0px;
     }
-    11% {
+    13% {
         background-position-x: -220px;
     }
-    22% {
+    26% {
         background-position-x: -455px;
     }
-    33% {
+    39% {
         background-position-x: -685px;
     }
-    44% {
+    52% {
         background-position-x: -928px;
     }
-    55% {
+    65% {
         background-position-x: -1195px;
     }
-    66% {
+    78% {
         background-position-x: -1450px;
     }
-    77% {
+    90% {
         background-position-x: -1727px;
     }
-    89% {
-        background-position-x: -1937px;
-    }
     100% {
-        background-position-x: 0px;
+        background-position-x: -1937px;
     }
 }
 
 .dragon__down {
     border: 1px solid gold;
     height: 150px;
-    width: 220px;
+    width: 230px;
     background-color: silver;
     background-image: url(../images/Dragon_Down_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: dragon__down_animate 1s steps(1) infinite;
+    animation: dragon__down_animate 1s steps(1) 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes dragon__down_animate {
     0% {
-        background-position-x: 0px;
+        background-position-x: 35px;
     }
-    11% {
-        background-position-x: -220px;
+    20% {
+        background-position-x: -200px;
     }
-    22% {
-        background-position-x: -453px;
+    40% {
+        background-position-x: -465px;
     }
-    33% {
-        background-position-x: -680px;
+    60% {
+        background-position-x: -720px;
     }
-    44% {
-        background-position-x: -915px;
-    }
-    55% {
-        background-position-x: -1185px;
-    }
-    66% {
-        background-position-x: -1440px;
-    }
-    77% {
-        background-position-x: -1720px;
-    }
-    89% {
-        background-position-x: -1930px;
+    80% {
+        background-position-x: -1000px;
     }
     100% {
-        background-position-x: 0px;
+        background-position-x: -1211px;
     }
 }
 
 .genie__move {
     border: 1px solid gold;
     height: 150px;
-    width: 80px;
+    width: 150px;
     background-color: silver;
     background-image: url(../images/Genie_Move_Tile.png);
     background-repeat: no-repeat;
@@ -443,74 +434,70 @@
 .genie__attack {
     border: 1px solid gold;
     height: 150px;
-    width: 130px;
+    width: 150px;
     background-color: silver;
     background-image: url(../images/Genie_Attack_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: genie__attack_animate 1s steps(1) infinite;
+    animation: genie__attack_animate 1s steps(1) 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes genie__attack_animate {
     0% {
         background-position-x: 0px;
     }
-    17% {
+    20% {
         background-position-x: -125px;
     }
-    37% {
+    40% {
         background-position-x: -255px;
     }
-    50% {
+    60% {
         background-position-x: -392px;
     }
-    67% {
+    80% {
         background-position-x: -520px;
     }
-    85% {
-        background-position-x: -635px;
-    }
     100% {
-        background-position-x: 0px;
+        background-position-x: -635px;
     }
 }
 
 .genie__down {
     border: 1px solid gold;
     height: 150px;
-    width: 130px;
+    width: 150px;
     background-color: silver;
     background-image: url(../images/Genie_Down_Tile.png);
     background-repeat: no-repeat;
     background-position-y: 0px;
     background-position-x: 0px;
-    animation: genie__down_animate 1s steps(1) infinite;
+    animation: genie__down_animate 1s steps(1) 1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes genie__down_animate {
     0% {
         background-position-x: 0px;
     }
-    15% {
+    18% {
         background-position-x: -125px;
     }
-    30% {
+    34% {
         background-position-x: -255px;
     }
-    45% {
+    52% {
         background-position-x: -392px;
     }
-    60% {
+    68% {
         background-position-x: -520px;
     }
-    75% {
+    85% {
         background-position-x: -635px;
     }
-    90% {
-        background-position-x: -735px;
-    }
     100% {
-        background-position-x: 0px;
+        background-position-x: -735px;
     }
 }
